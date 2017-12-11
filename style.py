@@ -1,5 +1,5 @@
 import _init_path
-from data_helper
+from data_helper import get_img_batch, tensor_size_prod
 from AutoEncoder import AutoEncoder
 from darknet import DarkNet
 from config import *
@@ -100,10 +100,7 @@ def train(content_imgs, style_img):
                 })
                 print("epoch: ", i, '\tstyle loss: ', _style_loss, '\tcontent loss: ', _content_loss, '\tTV loss: ', _tv_loss, '\ttime: ', datetime.datetime.now().time())
             saver = tf.train.Saver()
-            saver.save(sess, model_path + model_name)
-
-
-            
+            saver.save(sess, model_path + model_name)            
 
 if __name__ == '__main__':
     # style_image = get_img()       # ????
