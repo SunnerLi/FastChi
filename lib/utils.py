@@ -42,25 +42,25 @@ def get_img_batch(arr, idx, batch_size=32):
         Get batch data toward specific index
         I drop this function since the result cannot be slown quickly by this design
     """
-    img_batch = np.ndarray([batch_size, 256, 256, 3])
+    img_batch = np.ndarray([batch_size, 224, 400, 3])
     if idx * batch_size < len(arr):
         for j, img in enumerate(arr[idx * batch_size : idx * batch_size + batch_size]):
-            img = get_img(img, (256, 256, 3))
+            img = get_img(img, (224, 400, 3))
             img = img.astype(np.float32)
             img_batch[j] = img
     else:
         for j, img in enumerate(arr[len(arr) - batch_size : ]):
-            img = get_img(img, (256, 256, 3))
+            img = get_img(img, (224, 400, 3))
             img = img.astype(np.float32)
             img_batch[j] = img
     return img_batch
 
 def get_img_batch_random(arr, batch_size=32):
-    img_batch = np.ndarray([batch_size, 256, 256, 3])
+    img_batch = np.ndarray([batch_size, 224, 400, 3])
     idx = np.arange(0 , len(arr))
     np.random.shuffle(idx)
     idx = idx[:batch_size]
-    img_shuffle = [get_img(arr[i], (256, 256, 3)).astype(np.float32) for i in idx]
+    img_shuffle = [get_img(arr[i], (224, 400, 3)).astype(np.float32) for i in idx]
     return np.asarray(img_shuffle)
 
 def get_img_batch_proc(arr, img_queue, times, batch_size=32):

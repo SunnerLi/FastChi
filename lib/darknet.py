@@ -20,7 +20,7 @@ class DarkNet(object):
     def getStyleLayer(self, idx):
         return self.style_list[idx]
 
-    def build(self, image_ph, base_filter=16):
+    def build(self, image_ph, base_filter=8):
         with tf.variable_scope(self.name):
             network = tl.layers.InputLayer(image_ph, name='darknet_input_layer')
 
