@@ -1,8 +1,9 @@
 import _init_path
-from data_helper import get_img_batch, tensor_size_prod
 from AutoEncoder import AutoEncoder
+from multiprocessing import Process, Queue
 from darknet import DarkNet
 from config import *
+from utils import *
 import tensorlayer as tl
 import tensorflow as tf
 import numpy as np
@@ -12,7 +13,7 @@ saver = None
 style_features = []     # Store the gram matrix of style
 content_feature = []    # Store the gram matrix of content
 
-def train(content_imgs, style_img):
+def train(content_image_name_list, style_img):
     global style_features
     global content_feature
 
@@ -86,25 +87,39 @@ def train(content_imgs, style_img):
         train_op = tf.train.AdamOptimizer().minimize(loss)
 
         # Train
+        if adopt_multiprocess == True:
+            img_queue = Queue()
+            get_img_proc = Process(target=get_img_batch_proc, args=(content_image_name_list, img_queue, len(content_image_name_list) * epoch, batch_size))
+            get_img_proc.start()
         with tf.Session() as sess:
             sess.run(tf.global_variables_initializer())
-            for i in range(epoch):
-                num_iter = num_example // batch_size
-                for j in range(num_iter):
-                    img_batch = get_img_batch(content_imgs, j)
-                    _ = sess.run([train_op], feed_dict={
-                        content_ph: img_batch
-                    })
-                _style_loss, _content_loss, _tv_loss = sess.run([style_loss, content_loss, tv_loss], feed_dict={
+            # iteration = len(content_image_name_list) * epoch
+            iteration = 100
+            for i in range(iteration):
+                # Get batch image
+                if adopt_multiprocess == True:
+                    img_batch = img_queue.get()
+                else:
+                    img_batch = get_img_batch_random(content_image_name_list, batch_size=batch_size)
+
+                # Update
+                _ = sess.run([train_op], feed_dict={
                     content_ph: img_batch
                 })
-                print("epoch: ", i, '\tstyle loss: ', _style_loss, '\tcontent loss: ', _content_loss, '\tTV loss: ', _tv_loss, '\ttime: ', datetime.datetime.now().time())
+
+                # Verbose
+                if i % evaluate_period == 0:
+                    _style_loss, _content_loss, _tv_loss = sess.run([style_loss, content_loss, tv_loss], feed_dict={
+                        content_ph: img_batch
+                    })
+                    print("epoch: ", i, '\tstyle loss: ', _style_loss, '\tcontent loss: ', _content_loss, '\tTV loss: ', _tv_loss, '\ttime: ', datetime.datetime.now().time())
+            get_img_proc.join()
             saver = tf.train.Saver()
             saver.save(sess, model_path + model_name)            
 
 if __name__ == '__main__':
-    # style_image = get_img()       # ????
-    # content_image = get_files()   # ????
+    style_image = get_img(style_path + style_name)
+    content_image_name_list = get_content_imgs(content_path)
     style_image = np.random.random([224, 224, 3])
     content_image = np.random.random([1000, 224, 224, 3])
-    train(content_image, style_image)
+    train(content_image_name_list, style_image)
