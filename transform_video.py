@@ -38,7 +38,7 @@ def work(in_files, out_files, device_id, total_device, device_idx):
                 img_ph: img_batch / 255.0
             })
             for j, img_path in enumerate(out_files[i : i+1]):
-                save_img(img_path, _style_result[0][j] * 255.0)
+                save_img(img_path, _style_result[0][j])
 
 def stylize_video(in_files, out_files):
     global device_list

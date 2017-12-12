@@ -18,6 +18,7 @@ class Tiny_YOLO(object):
 
     def preprocess(self, tensor):
         return tensor - np.array([123.68, 116.779, 103.939])
+        # return tensor / 255.0
 
     def getContentLayer(self, idx):
         return self.content_list[idx]
@@ -25,7 +26,7 @@ class Tiny_YOLO(object):
     def getStyleLayer(self, idx):
         return self.style_list[idx]
 
-    def build(self, image_ph, pretrained_path, base_filter=16):
+    def build(self, image_ph, sess, pretrained_path, base_filter=16):
         # Conv1
         self.conv_1 = self.conv_layer(1,image_ph,16,3,1)
         self.relu_1 = lrelu(self.conv_1)
@@ -55,9 +56,9 @@ class Tiny_YOLO(object):
         # Conv5
         self.conv_13 = self.conv_layer(13,self.pool_12,1024,3,1)
         self.relu_7 = lrelu(self.conv_13)
-        self.conv_14 = self.conv_layer(14,self.conv_13,1024,3,1)
+        self.conv_14 = self.conv_layer(14,self.relu_7,1024,3,1)
         self.relu_8 = lrelu(self.conv_14)
-        self.conv_15 = self.conv_layer(15,self.conv_14,1024,3,1)
+        self.conv_15 = self.conv_layer(15,self.relu_8,1024,3,1)
         self.relu_9 = lrelu(self.conv_15)
 
         # Append style and content list
@@ -66,14 +67,15 @@ class Tiny_YOLO(object):
         self.style_list.append(self.relu_3)
         self.style_list.append(self.relu_5)
         self.style_list.append(self.relu_7)
-        self.content_list.append(self.relu_4)
-        self.content_list.append(self.relu_6)
+        self.content_list.append(self.conv_1)
+        self.content_list.append(self.conv_3)
 
         # Load
-        self.sess = tf.Session()
-        self.sess.run(tf.global_variables_initializer())
+        # self.sess = tf.Session()
+        # self.sess.run(tf.global_variables_initializer())
         self.saver = tf.train.Saver()
-        self.saver.restore(self.sess, pretrained_path)
+        self.saver.restore(sess, pretrained_path)
+        return self.relu_9
 
     def conv_layer(self,idx,inputs,filters,size,stride):
         channels = inputs.get_shape()[3]
@@ -111,7 +113,6 @@ class Tiny_YOLO(object):
 
 if __name__ == '__main__':
     image_ph = tf.placeholder(tf.float32, [None, 224, 400, 3])
-
     with tf.Session() as sess:
         net = Tiny_YOLO()
-        net.build(image_ph, 'YOLO_tiny.ckpt')
+        net.build(image_ph, sess, 'YOLO_tiny.ckpt')

@@ -1,6 +1,6 @@
 # Different loss weight
-content_weight = 7.5e0
-style_weight = 1e2
+content_weight = 7.5e2
+style_weight = 1e0
 tv_weight = 2e2
 
 # Related input/output path
@@ -17,7 +17,7 @@ video_output_name = 'res.mp4'
 epoch = 10
 batch_size = 16
 num_example = 64
-evaluate_period = 5
+evaluate_period = 10
 
 # Use multi-process
 adopt_multiprocess = False
