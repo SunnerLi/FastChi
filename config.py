@@ -15,9 +15,9 @@ video_output_name = 'res.mp4'
 
 # Parameter about training
 epoch = 10
-batch_size = 32
+batch_size = 16
 num_example = 64
-evaluate_period = 10
+evaluate_period = 5
 
 # Use multi-process
 adopt_multiprocess = False

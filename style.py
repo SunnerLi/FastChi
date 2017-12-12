@@ -29,7 +29,7 @@ def train(content_image_name_list, style_img):
             sess.run(tf.global_variables_initializer())
             for layer in net.style_list:
                 feature = layer.outputs.eval(feed_dict={
-                    style_ph: [style_img]
+                    style_ph: np.asarray([style_img])
                 })
                 feature = np.reshape(feature[0], (-1, feature.shape[3]))
                 gram = np.matmul(feature.T, feature) / feature.size
@@ -54,11 +54,14 @@ def train(content_image_name_list, style_img):
         # Define loss
         # -----------------------------------------------------------------------------------------------    
         # Content loss
+        """
         batch, height, width, channel = content_feature[0].outputs.get_shape()
         content_size = int(height) * int(width) * int(channel)
         content_loss = content_weight * (
-            tf.reduce_sum(tf.square(net.getContentLayer().outputs - content_feature[0].outputs) / content_size)
+            tf.nn.l2_loss(net.getContentLayer().outputs - content_feature[0].outputs) / content_size
         )
+        """
+        content_loss = content_weight * tf.reduce_mean(tf.square(net.getContentLayer().outputs - content_feature[0].outputs))
         
         # Style loss
         style_loss = None
@@ -71,15 +74,15 @@ def train(content_image_name_list, style_img):
             grams = tf.matmul(feats_T, feats) / flat_size
             style_gram = style_features[i]
             if style_loss is None:
-                style_loss = tf.reduce_sum(tf.square(grams - style_gram)) / flat_size
+                style_loss = style_weight * tf.nn.l2_loss(grams - style_gram) / batch_size / style_gram.size
             else:
-                style_loss += tf.reduce_sum(tf.square(grams - style_gram)) / flat_size
+                style_loss += style_weight * tf.nn.l2_loss(grams - style_gram) / batch_size / style_gram.size
         
         # TV denoising
         tv_y_size = tensor_size_prod(transfer_logits[:, 1:, :, :])
         tv_x_size = tensor_size_prod(transfer_logits[:, :, 1:, :])
-        y_tv = tf.reduce_sum(tf.square(transfer_logits[:, 1:, :, :] - transfer_logits[:, :223, :, :]))
-        x_tv = tf.reduce_sum(tf.square(transfer_logits[:, :, 1:, :] - transfer_logits[:, :, :399, :]))
+        y_tv = tf.nn.l2_loss(transfer_logits[:, 1:, :, :] - transfer_logits[:, :223, :, :])
+        x_tv = tf.nn.l2_loss(transfer_logits[:, :, 1:, :] - transfer_logits[:, :, :399, :])
         tv_loss = tv_weight * (x_tv / tv_x_size + y_tv / tv_y_size) / batch_size
         
         # Total loss and optimizer
@@ -113,6 +116,14 @@ def train(content_image_name_list, style_img):
                         content_ph: img_batch
                     })
                     print("epoch: ", i, '\tstyle: ', _style_loss, '\tcontent: ', _content_loss, '\tTV: ', _tv_loss, '\ttotal: ', _loss, '\ttime: ', datetime.datetime.now().time())
+
+                    _style_result = sess.run([transfer_logits,], feed_dict={
+                        content_ph: img_batch
+                    })
+                    print('max: ', np.max(_style_result[0][0]) * 255.0)                    
+                    _style_result = np.concatenate((img_batch[0], _style_result[0][0] * 255.0), axis=1)
+                    save_img(str(i) + '.png', _style_result)
+
             if adopt_multiprocess == True:
                 get_img_proc.join()
             saver = tf.train.Saver()
