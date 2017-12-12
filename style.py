@@ -61,7 +61,12 @@ def train(content_image_name_list, style_img):
             tf.nn.l2_loss(net.getContentLayer().outputs - content_feature[0].outputs) / content_size
         )
         """
-        content_loss = content_weight * tf.reduce_mean(tf.square(net.getContentLayer().outputs - content_feature[0].outputs))
+        content_loss = None
+        for i in range(len(net.content_list)):
+            if content_loss is None:
+                content_loss = content_weight * tf.reduce_mean(tf.square(net.getContentLayer(i).outputs - content_feature[i].outputs))
+            else:
+                content_loss += content_weight * tf.reduce_mean(tf.square(net.getContentLayer(i).outputs - content_feature[i].outputs))
         
         # Style loss
         style_loss = None

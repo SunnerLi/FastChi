@@ -30,7 +30,6 @@ class AutoEncoder(object):
         # Define shape
         batch, height, width, channel = layer.outputs.get_shape()
         height, width, channel = int(height), int(width), int(channel)
-        print(height, width, channel)
         scaler = strides[0]
         shrink_shape = (height, width)
         deconv_shape = (height * scaler, width * scaler)
