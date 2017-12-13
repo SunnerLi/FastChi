@@ -1,5 +1,6 @@
 import _init_path
-from autoencoder import net as AutoEncoder
+from autoencoder import small_net as SmallAutoEncoder
+# from autoencoder import net as AutoEncoder
 from multiprocessing import Process, Queue
 from functools import reduce
 from config import *
@@ -43,7 +44,7 @@ def train(content_image_name_list, style_img):
                 content_feature[layer_name] = net[layer_name]
 
             # Build the main path of the graph
-            transfer_logits = AutoEncoder(content_ph / 255.0)
+            transfer_logits = SmallAutoEncoder(content_ph / 255.0)
             net = vgg.net(vgg_path, vgg.preprocess(transfer_logits))
 
             # -----------------------------------------------------------------------------------------------
@@ -100,7 +101,7 @@ def train(content_image_name_list, style_img):
 
                 # Update
                 _ = sess.run([train_op], feed_dict={
-                    content_ph: img_batch / 255.0
+                    content_ph: img_batch
                 })
 
                 # Verbose
