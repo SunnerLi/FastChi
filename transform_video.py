@@ -1,6 +1,7 @@
 import _init_path
 from utils import list_files, get_img, save_img
-from autoencoder import net as AutoEncoder
+# from autoencoder import net as AutoEncoder
+from autoencoder import small_net as SmallAutoEncoder
 from multiprocessing import Process
 from config import *
 import tensorflow as tf
@@ -15,7 +16,7 @@ def work(in_files, out_files, device_id, total_device, device_idx):
 
         # Construct graph
         img_ph = tf.placeholder(tf.float32, shape=image_shape)
-        logits = AutoEncoder(img_ph)
+        logits = SmallAutoEncoder(img_ph)
         with tf.Session(config=tf_config) as sess:
             sess.run(tf.global_variables_initializer())
             saver = tf.train.Saver()

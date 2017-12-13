@@ -1,6 +1,7 @@
 import tensorflow as tf, pdb
 
 WEIGHTS_INIT_STDEV = .1
+shrink_scale = 2
 
 def net(image, base_filter = 32):
     conv1 = _conv_layer(image, base_filter, 9, 1)
@@ -42,13 +43,15 @@ def _conv_layer(net, num_filters, filter_size, strides, relu=True):
     return net
 
 def _conv_layer_incept(net, num_filters, filter_size, strides, relu=True):
+    global shrink_scale
+
     # Shrinking
-    weights_init = _conv_init_vars(net, num_filters // 2, 1)
+    weights_init = _conv_init_vars(net, num_filters // shrink_scale, 1)
     strides_shape = [1, 1, 1, 1]
     net = tf.nn.conv2d(net, weights_init, strides_shape, padding='SAME')
 
     # Working
-    weights_init = _conv_init_vars(net, num_filters // 2, filter_size)
+    weights_init = _conv_init_vars(net, num_filters // shrink_scale, filter_size)
     strides_shape = [1, strides, strides, 1]
     net = tf.nn.conv2d(net, weights_init, strides_shape, padding='SAME')
 
@@ -78,21 +81,23 @@ def _conv_tranpose_layer(net, num_filters, filter_size, strides):
 
 
 def _conv_tranpose_layer_incept(net, num_filters, filter_size, strides):
+    global shrink_scale
+
     # Shrinking
-    weights_init = _conv_init_vars(net, num_filters // 2, 1, transpose=True)
+    weights_init = _conv_init_vars(net, num_filters // shrink_scale, 1, transpose=True)
     batch_size, rows, cols, in_channels = [i.value for i in net.get_shape()]
     new_rows, new_cols = int(rows * 1), int(cols * 1)
-    new_shape = [batch_size, new_rows, new_cols, num_filters // 2]
+    new_shape = [batch_size, new_rows, new_cols, num_filters // shrink_scale]
     tf_shape = tf.stack(new_shape)
     strides_shape = [1, 1, 1, 1]
     net = tf.nn.conv2d_transpose(net, weights_init, tf_shape, strides_shape, padding='SAME')
     net = tf.reshape(net, new_shape)
 
     # Working
-    weights_init = _conv_init_vars(net, num_filters // 2, filter_size, transpose=True)
+    weights_init = _conv_init_vars(net, num_filters // shrink_scale, filter_size, transpose=True)
     batch_size, rows, cols, in_channels = [i.value for i in net.get_shape()]
     new_rows, new_cols = int(rows * strides), int(cols * strides)
-    new_shape = [batch_size, new_rows, new_cols, num_filters // 2]
+    new_shape = [batch_size, new_rows, new_cols, num_filters // shrink_scale]
     tf_shape = tf.stack(new_shape)
     strides_shape = [1, strides, strides, 1]
     net = tf.nn.conv2d_transpose(net, weights_init, tf_shape, strides_shape, padding='SAME')

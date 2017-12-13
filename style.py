@@ -8,14 +8,15 @@ from utils import *
 import tensorflow as tf
 import numpy as np
 import datetime
-import vgg
+import vgg_shape as vgg
+# import vgg
 
 saver = None
 style_features = {}     # Store the gram matrix of style
 content_feature = {}    # Store the gram matrix of content
 
-STYLE_LAYERS = ('relu1_1', 'relu2_1', 'relu3_1', 'relu4_1', 'relu5_1')
-CONTENT_LAYER = ('relu4_2', 'relu5_2')
+STYLE_LAYERS = ('relu1_1', 'relu2_1', 'relu3_1', 'relu4_1')
+CONTENT_LAYER = ('relu4_2',)
 
 def train(content_image_name_list, style_img):
     global style_features
@@ -34,10 +35,14 @@ def train(content_image_name_list, style_img):
                 feature = np.reshape(feature[0], (-1, feature.shape[3]))
                 gram = np.matmul(feature.T, feature) / feature.size
                 style_features[layer_name] =  gram
+        sess.close()
 
     # Build network
     with tf.Graph().as_default():
-        with tf.Session() as sess:
+        soft_config = tf.ConfigProto(allow_soft_placement=True)
+        soft_config.gpu_options.allow_growth = True
+        soft_config.gpu_options.per_process_gpu_memory_fraction = 0.5
+        with tf.Session(config=soft_config) as sess:
             content_ph = tf.placeholder(tf.float32, shape=(batch_size, image_shape[1], image_shape[2], image_shape[3]))
             net = vgg.net(vgg_path, vgg.preprocess(content_ph))
             for layer_name in CONTENT_LAYER:
@@ -46,6 +51,7 @@ def train(content_image_name_list, style_img):
             # Build the main path of the graph
             transfer_logits = SmallAutoEncoder(content_ph / 255.0)
             net = vgg.net(vgg_path, vgg.preprocess(transfer_logits))
+            # net = vgg.net(vgg_path, vgg.preprocess(transfer_logits), reuse=True)
 
             # -----------------------------------------------------------------------------------------------
             # Define loss

@@ -1,6 +1,6 @@
 # Different loss weight
 content_weight = 7.5e0
-style_weight = 1e4
+style_weight = 1e2
 tv_weight = 2e2
 
 # Related input/output path
@@ -16,10 +16,10 @@ vgg_path = './imagenet-vgg-verydeep-19.mat'
 image_shape = (1, 224, 400, 3)
 
 # Parameter about training
-iteration = 5
+iteration = 20000
 batch_size = 8
 num_example = 64
-evaluate_period = 2
+evaluate_period = 100
 
 # Use multi-process
 adopt_multiprocess = False
