@@ -1,8 +1,7 @@
 import _init_path
-# from AutoEncoder import AutoEncoder
-from AutoEncoder2 import net as AutoEncoder
-from multiprocessing import Process
 from utils import list_files, get_img, save_img
+from autoencoder import net as AutoEncoder
+from multiprocessing import Process
 from config import *
 import tensorflow as tf
 import numpy as np
