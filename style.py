@@ -91,7 +91,7 @@ def train(content_image_name_list, style_img):
 
             # Total loss and optimizer
             loss = content_loss + style_loss + tv_loss
-            train_op = tf.train.AdamOptimizer(0.002).minimize(content_loss)
+            train_op = tf.train.AdamOptimizer(0.001).minimize(loss)
 
             # Train
             try:
@@ -102,7 +102,7 @@ def train(content_image_name_list, style_img):
                 pass
         
             # iteration = len(content_image_name_list) * epoch
-            iteration = 2
+            iteration = 1000
             # if adopt_multiprocess == True:
                 # img_queue = Queue()
                 # get_img_proc = Process(target=get_img_batch_proc, args=(content_image_name_list, img_queue, iteration, batch_size))
@@ -132,7 +132,7 @@ def train(content_image_name_list, style_img):
                     print("epoch: ", i, '\tstyle: ', _style_loss, '\tcontent: ', _content_loss, '\tTV: ', _tv_loss, '\ttotal: ', _loss, '\ttime: ', datetime.datetime.now().time())
 
                     _style_result = sess.run([transfer_logits,], feed_dict={
-                        content_ph: img_batch / 255.0
+                        content_ph: img_batch
                     })
                     print('max: ', np.max(_style_result[0][0]))                    
                     _style_result = np.concatenate((img_batch[0], _style_result[0][0]), axis=1)

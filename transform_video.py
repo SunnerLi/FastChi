@@ -17,17 +17,15 @@ def work(in_files, out_files, device_id, total_device, device_idx):
         # Construct graph
         shape = (1, 224, 400, 3)
         img_ph = tf.placeholder(tf.float32, shape=(1, 224, 400, 3))
-        # net = AutoEncoder()
-        # logits = net.build(img_ph)
-        logits = AutoEncoder(img_ph)
+        net = AutoEncoder()
+        logits = net.build(img_ph)
+        # logits = AutoEncoder(img_ph)
 
 
         with tf.Session(config=tf_config) as sess:
             sess.run(tf.global_variables_initializer())
             saver = tf.train.Saver()
-
-            saver.restore(sess, model_path + model_name)
-            """
+            saver.restore(sess, model_path + model_name)           
 
             if total_device <= 1:
                 start = 0
@@ -45,35 +43,16 @@ def work(in_files, out_files, device_id, total_device, device_idx):
                 })
                 for j, img_path in enumerate(out_files[i : i+1]):
                     save_img(img_path, _style_result[0][j])
-            """
+            
 
 def stylize_video(in_files, out_files):
     global device_list
 
     # Update GPU index
     if adopt_multiprocess == False:
-        """
         p = Process(target=work, args=(in_files, out_files, device_list[0], 1, 0))
         p.start()
         p.join()
-        """
-        with tf.Graph().as_default():
-            tf_config = tf.ConfigProto(allow_soft_placement=True)
-            tf_config.gpu_options.allow_growth = True
-
-            # Construct graph
-            shape = (1, 224, 400, 3)
-            img_ph = tf.placeholder(tf.float32, shape=(1, 224, 400, 3))
-            # net = AutoEncoder()
-            # logits = net.build(img_ph)
-            logits = AutoEncoder(img_ph)
-
-
-            with tf.Session(config=tf_config) as sess:
-                sess.run(tf.global_variables_initializer())
-                saver = tf.train.Saver()
-
-                saver.restore(sess, model_path + model_name)
     else:
         proc_list = []
         with tf.Graph().as_default():
