@@ -1,6 +1,6 @@
 # Different loss weight
-content_weight = 7.5e2
-style_weight = 1e0
+content_weight = 7.5e0
+style_weight = 1e2
 tv_weight = 2e2
 
 # Related input/output path
@@ -21,4 +21,4 @@ evaluate_period = 10
 
 # Use multi-process
 adopt_multiprocess = False
-device_list = ['/gpu:0', '/gpu:1']
+device_list = ['/gpu:0', '/gpu:0']

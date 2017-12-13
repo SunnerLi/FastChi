@@ -26,7 +26,7 @@ class Tiny_YOLO(object):
     def getStyleLayer(self, idx):
         return self.style_list[idx]
 
-    def build(self, image_ph, sess, pretrained_path, base_filter=16):
+    def build(self, image_ph, base_filter=16):
         # Conv1
         self.conv_1 = self.conv_layer(1,image_ph,16,3,1)
         self.relu_1 = lrelu(self.conv_1)
@@ -67,14 +67,8 @@ class Tiny_YOLO(object):
         self.style_list.append(self.relu_3)
         self.style_list.append(self.relu_5)
         self.style_list.append(self.relu_7)
-        self.content_list.append(self.conv_1)
-        self.content_list.append(self.conv_3)
-
-        # Load
-        # self.sess = tf.Session()
-        # self.sess.run(tf.global_variables_initializer())
-        self.saver = tf.train.Saver()
-        self.saver.restore(sess, pretrained_path)
+        self.content_list.append(self.relu_4)
+        self.content_list.append(self.relu_6)        
         return self.relu_9
 
     def conv_layer(self,idx,inputs,filters,size,stride):
@@ -110,6 +104,12 @@ class Tiny_YOLO(object):
         if linear : return tf.add(tf.matmul(inputs_processed,weight),biases,name=str(idx)+'_fc')
         ip = tf.add(tf.matmul(inputs_processed,weight),biases)
         return tf.maximum(self.alpha*ip,ip,name=str(idx)+'_fc')
+
+    def restore(self, sess, pretrained_path):
+        sess.run(tf.global_variables_initializer())
+        self.saver = tf.train.Saver()
+        self.saver.restore(sess, pretrained_path)
+        print("Restore complete!")
 
 if __name__ == '__main__':
     image_ph = tf.placeholder(tf.float32, [None, 224, 400, 3])

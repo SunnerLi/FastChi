@@ -1,5 +1,6 @@
 import _init_path
-from AutoEncoder import AutoEncoder
+# from AutoEncoder import AutoEncoder
+from AutoEncoder2 import net as AutoEncoder
 from multiprocessing import Process, Queue
 from tiny_yolo import Tiny_YOLO
 from darknet import DarkNet
@@ -27,7 +28,8 @@ def train(content_image_name_list, style_img):
         # Run
         with tf.Session() as sess:
             net = Tiny_YOLO()
-            style_logits = net.build(net.preprocess(style_ph), sess, pretrained_path='./lib/YOLO_tiny.ckpt')
+            style_logits = net.build(net.preprocess(style_ph))
+            net.restore(sess, pretrained_path='./lib/YOLO_tiny.ckpt')
             for layer in net.style_list:
                 feature = layer.eval(feed_dict={
                     style_ph: np.asarray([style_img])
@@ -41,26 +43,18 @@ def train(content_image_name_list, style_img):
     with tf.Graph().as_default():
         with tf.Session() as sess:
             content_ph = tf.placeholder(tf.float32, shape=(batch_size, 224, 400, 3))
-            # net = DarkNet(name='content_cnn')
-            net = Tiny_YOLO()
-
-            content_logits = net.build(net.preprocess(content_ph), sess, pretrained_path='./lib/YOLO_tiny.ckpt')
-
-        
-            for layer in net.content_list:
+            net2 = Tiny_YOLO()
+            content_logits = net2.build(net2.preprocess(content_ph))
+            for layer in net2.content_list:
                 content_feature.append(layer)
+            net2.restore(sess, './lib/YOLO_tiny.ckpt')
 
             # Construct render network and loss network
-            transfer_net = AutoEncoder()
-            transfer_logits = transfer_net.build(content_ph / 255.0)
-            # net = DarkNet(name='examine_cnn')
+            # transfer_net = AutoEncoder()
+            # transfer_logits = transfer_net.build(content_ph)
+            transfer_logits = AutoEncoder(content_ph)
             net = Tiny_YOLO()
-
-            try:
-                content_normalized_logits = net.build(net.preprocess(transfer_logits), sess, pretrained_path='./lib/YOLO_tiny.ckpt')
-            except:
-                pass
-            
+            content_normalized_logits = net.build(net.preprocess(transfer_logits))
 
             # -----------------------------------------------------------------------------------------------
             # Define loss
@@ -69,9 +63,9 @@ def train(content_image_name_list, style_img):
             content_loss = None
             for i in range(len(net.content_list)):
                 if content_loss is None:
-                    content_loss = content_weight * tf.reduce_mean(tf.square(net.getContentLayer(i) - content_feature[i]))
+                    content_loss = content_weight * tf.nn.l2_loss(net.getContentLayer(i) - content_feature[i])
                 else:
-                    content_loss += content_weight * tf.reduce_mean(tf.square(net.getContentLayer(i) - content_feature[i]))
+                    content_loss += content_weight * tf.nn.l2_loss(net.getContentLayer(i) - content_feature[i])
 
             # Style loss
             style_loss = None
@@ -97,34 +91,37 @@ def train(content_image_name_list, style_img):
 
             # Total loss and optimizer
             loss = content_loss + style_loss + tv_loss
-            train_op = tf.train.AdamOptimizer().minimize(loss)
+            train_op = tf.train.AdamOptimizer(0.002).minimize(content_loss)
 
             # Train
-
+            try:
+                saver = tf.train.Saver()
+                sess.run(tf.global_variables_initializer())
+                saver.restore(sess, './lib/YOLO_tiny2.ckpt')
+            except:
+                pass
         
-        # iteration = len(content_image_name_list) * epoch
-        iteration = 1000
-        if adopt_multiprocess == True:
-            img_queue = Queue()
-            get_img_proc = Process(target=get_img_batch_proc, args=(content_image_name_list, img_queue, iteration, batch_size))
-            get_img_proc.start()
+            # iteration = len(content_image_name_list) * epoch
+            iteration = 2
+            # if adopt_multiprocess == True:
+                # img_queue = Queue()
+                # get_img_proc = Process(target=get_img_batch_proc, args=(content_image_name_list, img_queue, iteration, batch_size))
+                # get_img_proc.start()
+# 
+            img_batch = get_img_batch_random(content_image_name_list, batch_size=batch_size)
 
-        img_batch = get_img_batch_random(content_image_name_list, batch_size=batch_size)
-        with tf.Session() as sess:
-            sess.run(tf.global_variables_initializer())
+
             for i in range(iteration):
 
-                """
                 # Get batch image
-                if adopt_multiprocess == True:
-                    img_batch = img_queue.get()
-                else:
-                    img_batch = get_img_batch_random(content_image_name_list, batch_size=batch_size)
-                """
+                # if adopt_multiprocess == True:
+                    # img_batch = img_queue.get()
+                # else:
+                    # img_batch = get_img_batch_random(content_image_name_list, batch_size=batch_size)
 
                 # Update
                 _ = sess.run([train_op], feed_dict={
-                    content_ph: img_batch
+                    content_ph: img_batch / 255.0
                 })
 
                 # Verbose
@@ -135,17 +132,16 @@ def train(content_image_name_list, style_img):
                     print("epoch: ", i, '\tstyle: ', _style_loss, '\tcontent: ', _content_loss, '\tTV: ', _tv_loss, '\ttotal: ', _loss, '\ttime: ', datetime.datetime.now().time())
 
                     _style_result = sess.run([transfer_logits,], feed_dict={
-                        content_ph: img_batch
+                        content_ph: img_batch / 255.0
                     })
-                    print('max: ', np.max(_style_result[0][0]) * 255.0)                    
+                    print('max: ', np.max(_style_result[0][0]))                    
                     _style_result = np.concatenate((img_batch[0], _style_result[0][0]), axis=1)
                     save_img(str(i) + '.png', _style_result)
 
             if adopt_multiprocess == True:
                 get_img_proc.join()
             saver = tf.train.Saver()
-            saver.save(sess, model_path + model_name)       
-        
+            saver.save(sess, model_path + model_name)    
 
 if __name__ == '__main__':
     style_image = get_img(style_path + style_name)
