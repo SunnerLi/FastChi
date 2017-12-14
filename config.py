@@ -1,7 +1,15 @@
 # Different loss weight
-content_weight = 7.5e0
-style_weight = 1e2
-tv_weight = 2e2
+
+# --------------------------
+# Inception hyper-parameter
+# --------------------------
+# content_weight = 1e-3
+# style_weight = 1e4
+# tv_weight = 2e2
+
+content_weight = 1e-7
+style_weight = 1e0
+tv_weight = 2e-2
 
 # Related input/output path
 model_path = './model/'
@@ -16,10 +24,11 @@ vgg_path = './imagenet-vgg-verydeep-19.mat'
 image_shape = (1, 224, 400, 3)
 
 # Parameter about training
-iteration = 20000
+iteration = 1000
+style_pretrain_iteration = 200
 batch_size = 8
 num_example = 64
-evaluate_period = 100
+evaluate_period = 10
 
 # Use multi-process
 adopt_multiprocess = False
