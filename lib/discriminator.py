@@ -1,6 +1,11 @@
 import tensorflow as tf
 import numpy as np
 
+"""
+    This program isn't adopted in final experiment
+    Because it's much hard to extract feature by such simple structure with untrained situation
+"""
+
 MEAN_PIXEL = np.array([ 123.68 ,  116.779,  103.939])
 
 class batch_norm(object):
@@ -38,7 +43,6 @@ def net(image_ph, base_filter = 32, reuse=False):
                 batch_norm_layer = batch_norm()
                 current = batch_norm_layer(current)
             net[name] = current
-        # return tf.nn.sigmoid(h4), h4
         return net
 
 def _conv_layer(tensor, filter_size, output_channel, strides = (1, 2, 2, 1)):

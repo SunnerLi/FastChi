@@ -1,9 +1,20 @@
 import tensorflow as tf, pdb
 
+""" 
+    This program is borrowed and revised from the following site:
+    https://github.com/lengstrom/fast-style-transfer/blob/master/src/transform.py
+"""
+
 WEIGHTS_INIT_STDEV = .1
 shrink_scale = 2
 
 def net(image, base_filter = 32):
+    """
+        Return the architecture of original residual encoder-decoder
+        Arg:    image       - The image placeholder
+                base_filter - The base number of filter
+        Ret:    The dict object with the tensors of graph
+    """
     conv1 = _conv_layer(image, base_filter, 9, 1)
     conv2 = _conv_layer(conv1, base_filter * 2, 3, 2)
     conv3 = _conv_layer(conv2, base_filter * 4, 3, 2)
@@ -19,6 +30,12 @@ def net(image, base_filter = 32):
     return preds
 
 def small_net(image, base_filter = 16):
+    """
+        Return the architecture of inception version residual encoder-decoder
+        Arg:    image       - The image placeholder
+                base_filter - The base number of filter
+        Ret:    The dict object with the tensors of graph
+    """
     conv1 = _conv_layer_incept(image, base_filter, 9, 1)
     conv2 = _conv_layer_incept(conv1, base_filter * 2, 3, 2)
     conv3 = _conv_layer_incept(conv2, base_filter * 4, 3, 2)
@@ -34,6 +51,16 @@ def small_net(image, base_filter = 16):
     return preds
 
 def _conv_layer(net, num_filters, filter_size, strides, relu=True):
+    """
+        Convolution wrapper. 
+        This function contains convolution, batch normalization and relu operation
+        Arg:    net         - The tensor object of previous layer
+                num_filters - The number of filter in convolution operation
+                filter_size - The size of convolution filter
+                strides     - The strides while dealing with convolution
+                relu        - Boolean, determine if adopting ReLU
+        Ret:    The result tensor object
+    """
     weights_init = _conv_init_vars(net, num_filters, filter_size)
     strides_shape = [1, strides, strides, 1]
     net = tf.nn.conv2d(net, weights_init, strides_shape, padding='SAME')
@@ -43,6 +70,19 @@ def _conv_layer(net, num_filters, filter_size, strides, relu=True):
     return net
 
 def _conv_layer_incept(net, num_filters, filter_size, strides, relu=True):
+    """
+        Convolution wrapper. (Inception version)
+        This function contains convolution, batch normalization and relu operation
+        The convolution is decomposed as three part: shrinking, working and expanding
+        * To be notice, you should revised 'shrink_scale' global variable to 
+        change the value of scale you want to shrink and expand
+        Arg:    net         - The tensor object of previous layer
+                num_filters - The number of filter in convolution operation
+                filter_size - The size of convolution filter
+                strides     - The strides while dealing with convolution
+                relu        - Boolean, determine if adopting ReLU
+        Ret:    The result tensor object
+    """
     global shrink_scale
 
     # Shrinking
@@ -65,6 +105,15 @@ def _conv_layer_incept(net, num_filters, filter_size, strides, relu=True):
     return net
 
 def _conv_tranpose_layer(net, num_filters, filter_size, strides):
+    """
+        Deconvolution wrapper. 
+        This function contains deconvolution and relu operation
+        Arg:    net         - The tensor object of previous layer
+                num_filters - The number of filter in deconvolution operation
+                filter_size - The size of deconvolution filter
+                strides     - The strides while dealing with deconvolution
+        Ret:    The result tensor object
+    """
     weights_init = _conv_init_vars(net, num_filters, filter_size, transpose=True)
     batch_size, rows, cols, in_channels = [i.value for i in net.get_shape()]
 
@@ -81,6 +130,18 @@ def _conv_tranpose_layer(net, num_filters, filter_size, strides):
 
 
 def _conv_tranpose_layer_incept(net, num_filters, filter_size, strides):
+    """
+        Deconvolution wrapper. (Inception version)
+        This function contains deconvolution and relu operation
+        The deconvolution is decomposed as three part: shrinking, working and expanding
+        * To be notice, you should revised 'shrink_scale' global variable to 
+        change the value of scale you want to shrink and expand
+        Arg:    net         - The tensor object of previous layer
+                num_filters - The number of filter in deconvolution operation
+                filter_size - The size of deconvolution filter
+                strides     - The strides while dealing with deconvolution
+        Ret:    The result tensor object
+    """
     global shrink_scale
 
     # Shrinking
@@ -116,14 +177,35 @@ def _conv_tranpose_layer_incept(net, num_filters, filter_size, strides):
     return tf.nn.relu(net)
 
 def _residual_block(net, n_filter = 128, filter_size = 3):
+    """
+        The wrapper of residual block.
+        The number of convolution in single block is 2
+        Arg:    net         - The tensor object of previous layer
+                num_filters - The number of filter in each convolution operation
+                filter_size - The size of convolution filter
+        Ret:    The result tensor object
+    """
     tmp = _conv_layer(net, n_filter, filter_size, 1)
     return net + _conv_layer(tmp, n_filter, filter_size, 1, relu=False)
 
 def _residual_block_incept(net, n_filter = 128, filter_size = 3):
+    """
+        The wrapper of residual block. (Inception version)
+        The number of convolution in single block is 2
+        Arg:    net         - The tensor object of previous layer
+                num_filters - The number of filter in each convolution operation
+                filter_size - The size of convolution filter
+        Ret:    The result tensor object
+    """
     tmp = _conv_layer_incept(net, n_filter, filter_size, 1)
     return net + _conv_layer_incept(tmp, n_filter, filter_size, 1, relu=False)
 
 def _instance_norm(net, train=True):
+    """
+        This function adopt Batch normalization with native API
+        Arg:    net     - The tensor object of previous layer
+        Ret:    The result tensor object 
+    """
     batch, rows, cols, channels = [i.value for i in net.get_shape()]
     var_shape = [channels]
     mu, sigma_sq = tf.nn.moments(net, [1,2], keep_dims=True)
@@ -134,6 +216,14 @@ def _instance_norm(net, train=True):
     return scale * normalized + shift
 
 def _conv_init_vars(net, out_channels, filter_size, transpose=False):
+    """
+        Return the initialized tensor of convolution
+        Arg:    net             - The tensor object of previous layer
+                out_channels    - The number of output channel after convolution operation
+                filter_size     - The size of deconvolution filter
+                transpose       - Boolean to control if it's convolution or deconvolution
+        Ret:    The result tensorflow variable object
+    """
     _, rows, cols, in_channels = [i.value for i in net.get_shape()]
     if not transpose:
         weights_shape = [filter_size, filter_size, in_channels, out_channels]

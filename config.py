@@ -1,15 +1,17 @@
 # Different loss weight
-
 # --------------------------
 # Inception hyper-parameter
 # --------------------------
-# content_weight = 1e-3
-# style_weight = 1e4
-# tv_weight = 2e2
+content_weight = 1e-3
+style_weight = 1e4
+tv_weight = 2e2
 
-content_weight = 1e-7
-style_weight = 1e0
-tv_weight = 2e-2
+# --------------------------
+# Random tiny-yolo hyper-parameter
+# --------------------------
+# content_weight = 1e-7
+# style_weight = 1e0
+# tv_weight = 2e-2
 
 # Related input/output path
 model_path = './model/'
@@ -20,16 +22,16 @@ content_path = 'data/train2014'
 video_path = './video/'
 video_input_name = '20977333_328662897561035_2692550031910633472_n.mp4'
 video_output_name = 'res.mp4'
-vgg_path = './imagenet-vgg-verydeep-19.mat'
+vgg_path = './data/imagenet-vgg-verydeep-19.mat'
 image_shape = (1, 224, 400, 3)
 
 # Parameter about training
-iteration = 1000
-style_pretrain_iteration = 200
-batch_size = 8
-num_example = 64
 evaluate_period = 10
+learning_rate = 0.004
+num_example = 64
+batch_size = 8
+iteration = 1000
 
 # Use multi-process
-adopt_multiprocess = False
+adopt_multiprocess = True
 device_list = ['/gpu:0', '/gpu:0']
