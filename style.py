@@ -16,7 +16,7 @@ style_features = {}     # Store the gram matrix of style
 content_feature = {}    # Store the gram matrix of content
 
 STYLE_LAYERS = ('lrelu_1', 'lrelu_3', 'lrelu_5', 'lrelu_9')
-CONTENT_LAYER = ('lrelu_7',)
+CONTENT_LAYER = ('lrelu_3', 'lrelu_7',)
 
 def train(content_image_name_list, style_img):
     global style_features
@@ -64,7 +64,7 @@ def train(content_image_name_list, style_img):
             content_loss = 0.0
             content_losses = []
             for layer_name in CONTENT_LAYER:
-                content_losses.append(content_weight * tf.nn.l2_loss(net[layer_name] - content_feature[layer_name]))
+                content_losses.append(content_weight * tf.reduce_mean(tf.square(net[layer_name] - content_feature[layer_name])))
             content_loss += reduce(tf.add, content_losses)
 
             # Style loss
@@ -78,7 +78,7 @@ def train(content_image_name_list, style_img):
                 feats_T = tf.transpose(feats, perm=[0, 2, 1])
                 grams = tf.matmul(feats_T, feats) / flat_size
                 style_gram = style_features[layer_name]
-                style_losses.append(style_weight * tf.nn.l2_loss(grams - style_gram) / batch_size / style_gram.size)
+                style_losses.append(style_weight * tf.reduce_mean(tf.square(grams - style_gram) / batch_size / style_gram.size))
             style_loss += reduce(tf.add, style_losses)
 
             # TV denoising
@@ -157,7 +157,6 @@ def train(content_image_name_list, style_img):
                     _style_result = sess.run([transfer_logits,], feed_dict={
                         content_ph: img_batch
                     })
-                    print('max: ', np.max(_style_result[0][0]))                    
                     _style_result = np.concatenate((img_batch[0], _style_result[0][0]), axis=1)
                     save_img(str(i) + '.png', _style_result)
 

@@ -20,7 +20,7 @@ vgg_path = './imagenet-vgg-verydeep-19.mat'
 image_shape = (1, 224, 400, 3)
 
 # Parameter about training
-iteration = 4000
+iteration = 2000
 style_pretrain_iteration = 2000
 batch_size = 8
 num_example = 64
