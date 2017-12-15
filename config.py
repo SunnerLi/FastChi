@@ -1,6 +1,10 @@
 # Different loss weight
-content_weight = 7.5e0
-style_weight = 1e2
+
+# --------------------------
+# Inception hyper-parameter
+# --------------------------
+content_weight = 1e0
+style_weight = 1e4
 tv_weight = 2e2
 
 # Related input/output path
@@ -12,10 +16,13 @@ content_path = 'data/train2014'
 video_path = './video/'
 video_input_name = '20977333_328662897561035_2692550031910633472_n.mp4'
 video_output_name = 'res.mp4'
+vgg_path = './imagenet-vgg-verydeep-19.mat'
+image_shape = (1, 224, 400, 3)
 
 # Parameter about training
-epoch = 10
-batch_size = 16
+iteration = 4000
+style_pretrain_iteration = 2000
+batch_size = 8
 num_example = 64
 evaluate_period = 10
 

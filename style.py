@@ -1,19 +1,22 @@
 import _init_path
-# from AutoEncoder import AutoEncoder
 from AutoEncoder2 import net as AutoEncoder
+from AutoEncoder2 import small_net as SmallAutoEncoder
+
 from multiprocessing import Process, Queue
-from tiny_yolo import Tiny_YOLO
-from darknet import DarkNet
+from functools import reduce
 from config import *
 from utils import *
-import tensorlayer as tl
 import tensorflow as tf
 import numpy as np
 import datetime
+import tiny_yolo as vgg
 
 saver = None
-style_features = []     # Store the gram matrix of style
-content_feature = []    # Store the gram matrix of content
+style_features = {}     # Store the gram matrix of style
+content_feature = {}    # Store the gram matrix of content
+
+STYLE_LAYERS = ('lrelu_1', 'lrelu_3', 'lrelu_5', 'lrelu_9')
+CONTENT_LAYER = ('lrelu_7',)
 
 def train(content_image_name_list, style_img):
     global style_features
@@ -23,101 +26,121 @@ def train(content_image_name_list, style_img):
     style_shape = (1,) + style_img.shape
     with tf.Graph().as_default():
         style_ph = tf.placeholder(tf.float32, shape=style_shape, name='style_image')
-        # net = DarkNet(name='style_cnn')
-        
-        # Run
         with tf.Session() as sess:
-            net = Tiny_YOLO()
-            style_logits = net.build(net.preprocess(style_ph))
-            net.restore(sess, pretrained_path='./lib/YOLO_tiny.ckpt')
-            for layer in net.style_list:
-                feature = layer.eval(feed_dict={
+            net = vgg.net(vgg.preprocess(style_ph))
+
+            sess.run(tf.global_variables_initializer())
+            for layer_name in STYLE_LAYERS:
+                feature = net[layer_name].eval(feed_dict={
                     style_ph: np.asarray([style_img])
                 })
                 feature = np.reshape(feature[0], (-1, feature.shape[3]))
                 gram = np.matmul(feature.T, feature) / feature.size
-                style_features.append(gram)
+                style_features[layer_name] =  gram
+        sess.close()
 
-    # Deal with content image
-    tl.layers.clear_layers_name()
+    # Build network
     with tf.Graph().as_default():
-        with tf.Session() as sess:
-            content_ph = tf.placeholder(tf.float32, shape=(batch_size, 224, 400, 3))
-            net2 = Tiny_YOLO()
-            content_logits = net2.build(net2.preprocess(content_ph))
-            for layer in net2.content_list:
-                content_feature.append(layer)
-            net2.restore(sess, './lib/YOLO_tiny.ckpt')
+        soft_config = tf.ConfigProto(allow_soft_placement=True)
+        soft_config.gpu_options.allow_growth = True
+        soft_config.gpu_options.per_process_gpu_memory_fraction = 0.5
+        with tf.Session(config=soft_config) as sess:
+            content_ph = tf.placeholder(tf.float32, shape=(batch_size, image_shape[1], image_shape[2], image_shape[3]))
+            net = vgg.net(vgg.preprocess(content_ph))
 
-            # Construct render network and loss network
-            # transfer_net = AutoEncoder()
-            # transfer_logits = transfer_net.build(content_ph)
-            transfer_logits = AutoEncoder(content_ph)
-            net = Tiny_YOLO()
-            content_normalized_logits = net.build(net.preprocess(transfer_logits))
+            for layer_name in CONTENT_LAYER:
+                content_feature[layer_name] = net[layer_name]
+
+            # Build the main path of the graph
+            transfer_logits = SmallAutoEncoder(content_ph / 255.0)
+            # net = vgg.net(vgg_path, vgg.preprocess(transfer_logits))
+            # net = vgg.net(vgg_path, vgg.preprocess(transfer_logits), reuse=True)
+            net = vgg.net(vgg.preprocess(transfer_logits))
 
             # -----------------------------------------------------------------------------------------------
             # Define loss
             # -----------------------------------------------------------------------------------------------    
             # Content loss
-            content_loss = None
-            for i in range(len(net.content_list)):
-                if content_loss is None:
-                    content_loss = content_weight * tf.nn.l2_loss(net.getContentLayer(i) - content_feature[i])
-                else:
-                    content_loss += content_weight * tf.nn.l2_loss(net.getContentLayer(i) - content_feature[i])
+            content_loss = 0.0
+            content_losses = []
+            for layer_name in CONTENT_LAYER:
+                content_losses.append(content_weight * tf.nn.l2_loss(net[layer_name] - content_feature[layer_name]))
+            content_loss += reduce(tf.add, content_losses)
 
             # Style loss
-            style_loss = None
-            for i, layer in enumerate(style_features):
-                content_lrelu_layer = net.getStyleLayer(i)
+            style_loss = 0.0
+            style_losses = []
+            for layer_name in STYLE_LAYERS:
+                content_lrelu_layer = net[layer_name]
                 batch, height, width, channel = content_lrelu_layer.get_shape()
                 flat_size = tensor_size_prod(content_lrelu_layer)
                 feats = tf.reshape(content_lrelu_layer, [int(batch), int(height) * int(width), int(channel)])
                 feats_T = tf.transpose(feats, perm=[0, 2, 1])
                 grams = tf.matmul(feats_T, feats) / flat_size
-                style_gram = style_features[i]
-                if style_loss is None:
-                    style_loss = style_weight * tf.nn.l2_loss(grams - style_gram) / batch_size / style_gram.size
-                else:
-                    style_loss += style_weight * tf.nn.l2_loss(grams - style_gram) / batch_size / style_gram.size
+                style_gram = style_features[layer_name]
+                style_losses.append(style_weight * tf.nn.l2_loss(grams - style_gram) / batch_size / style_gram.size)
+            style_loss += reduce(tf.add, style_losses)
 
             # TV denoising
             tv_y_size = tensor_size_prod(transfer_logits[:, 1:, :, :])
             tv_x_size = tensor_size_prod(transfer_logits[:, :, 1:, :])
-            y_tv = tf.nn.l2_loss(transfer_logits[:, 1:, :, :] - transfer_logits[:, :223, :, :])
-            x_tv = tf.nn.l2_loss(transfer_logits[:, :, 1:, :] - transfer_logits[:, :, :399, :])
+            y_tv = tf.nn.l2_loss(transfer_logits[:, 1:, :, :] - transfer_logits[:, :image_shape[1] - 1, :, :])
+            x_tv = tf.nn.l2_loss(transfer_logits[:, :, 1:, :] - transfer_logits[:, :, :image_shape[2] - 1, :])
             tv_loss = tv_weight * (x_tv / tv_x_size + y_tv / tv_y_size) / batch_size
 
             # Total loss and optimizer
             loss = content_loss + style_loss + tv_loss
-            train_op = tf.train.AdamOptimizer(0.001).minimize(loss)
+            train_op = tf.train.AdamOptimizer(0.002).minimize(loss)
+            style_train_op = tf.train.AdamOptimizer(0.002).minimize(style_loss)
 
+            # Train
+            # iteration = 1000
+            
             # Train
             try:
                 saver = tf.train.Saver()
                 sess.run(tf.global_variables_initializer())
-                saver.restore(sess, './lib/YOLO_tiny2.ckpt')
+                saver.restore(sess, './lib/YOLO_tiny.ckpt')
             except:
                 pass
         
             # iteration = len(content_image_name_list) * epoch
-            iteration = 1000
+            # iteration = 1000
             # if adopt_multiprocess == True:
                 # img_queue = Queue()
                 # get_img_proc = Process(target=get_img_batch_proc, args=(content_image_name_list, img_queue, iteration, batch_size))
                 # get_img_proc.start()
-# 
-            img_batch = get_img_batch_random(content_image_name_list, batch_size=batch_size)
 
+            # Train style first
+            for i in range(style_pretrain_iteration):
+                img_batch = get_img_batch_random(content_image_name_list, batch_size=batch_size)
+                
+                # Update
+                _ = sess.run([style_train_op], feed_dict={
+                    content_ph: img_batch
+                })
+                # Verbose
+                if i % evaluate_period == 0:
+                    _style_loss, _content_loss, _tv_loss, _loss = sess.run([style_loss, content_loss, tv_loss, loss], feed_dict={
+                        content_ph: img_batch
+                    })
+                    print("epoch: ", i, '\tstyle: ', _style_loss, '\ttime: ', datetime.datetime.now().time())
+
+                    _style_result = sess.run([transfer_logits,], feed_dict={
+                        content_ph: img_batch
+                    })
+                    _style_result = np.concatenate((img_batch[0], _style_result[0][0]), axis=1)
+                    save_img('style_' + str(i) + '.png', _style_result)
+# 
+            # img_batch = get_img_batch_random(content_image_name_list, batch_size=batch_size)
 
             for i in range(iteration):
 
                 # Get batch image
-                # if adopt_multiprocess == True:
-                    # img_batch = img_queue.get()
-                # else:
-                    # img_batch = get_img_batch_random(content_image_name_list, batch_size=batch_size)
+                if adopt_multiprocess == True:
+                    img_batch = img_queue.get()
+                else:
+                    img_batch = get_img_batch_random(content_image_name_list, batch_size=batch_size)
 
                 # Update
                 _ = sess.run([train_op], feed_dict={
