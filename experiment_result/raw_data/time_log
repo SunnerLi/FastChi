@@ -1,0 +1,3 @@
+mean of time cost (with multi-process)    : 0.00611026666667
+mean of time cost (without multi-process) : 0.0955616
+accelerate scale                          : 15.6395138237
