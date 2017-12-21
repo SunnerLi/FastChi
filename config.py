@@ -3,7 +3,7 @@
 # Inception hyper-parameter
 # --------------------------
 content_weight = 1e-3
-style_weight = 1e4
+style_weight = 2e4
 tv_weight = 2e2
 
 # --------------------------
@@ -27,10 +27,10 @@ image_shape = (1, 224, 400, 3)
 
 # Parameter about training
 evaluate_period = 10
-learning_rate = 0.004
+learning_rate = 0.002
 num_example = 64
 batch_size = 8
-iteration = 1000
+iteration = 75000
 
 # Use multi-process
 adopt_multiprocess = True

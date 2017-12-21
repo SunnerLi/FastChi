@@ -10,11 +10,13 @@ import tensorflow as tf
 import numpy as np
 import datetime
 import argparse
+import time
 import vgg
 
 saver = None            # Model save object
 style_features = {}     # Store the gram matrix of style
 content_feature = {}    # Store the gram matrix of content
+tower_grades=[]         # The list object to contain gradient_and_variations
 
 # The list of layer name
 STYLE_LAYERS = ('relu1_1', 'relu2_1', 'relu3_1', 'relu4_1')
@@ -23,47 +25,52 @@ CONTENT_LAYER = ('relu4_2',)
 # Flag to control if use inception structure & vgg revision
 adopt_revision = False
 
-def train(content_image_name_list, style_img):
+def average_gradients(tower_grads):
     """
-        Train the neural style transfer model
+        Calculate the average gradient
+        This function is lent from here: https://github.com/tensorflow/models/blob/master/tutorials/image/cifar10/cifar10_multi_gpu_train.py
 
-        Arg:    content_image_name_list - The name list of training data
-                style_img               - The style image (ndarray type)
+        Arg:    tower_grads - The list of the gradients
+        Ret:    The average gradient (tuple of gradient and variance)
     """
-    global style_features
-    global content_feature
-    global adopt_revision
+    average_grads = []
+    for grad_and_vars in zip(*tower_grads):
+        grads = []
+        for g, _ in grad_and_vars:
+            if g != None:
+                expanded_g = tf.expand_dims(g, 0)
+                grads.append(expanded_g)
+        grad = tf.concat(grads,0)
+        grad = tf.reduce_mean(grad, 0)
+        v = grad_and_vars[0][1]
+        grad_and_var = (grad, v)
+        average_grads.append(grad_and_var)
+    return average_grads
 
-    # -------------------------------------------------------------------------------------------------------------------
-    # Precompute gram matrix of style frature
-    # -------------------------------------------------------------------------------------------------------------------
-    style_shape = (1,) + style_img.shape
-    with tf.Graph().as_default():
-        style_ph = tf.placeholder(tf.float32, shape=style_shape, name='style_image')
-        with tf.Session() as sess:
-            if adopt_revision == True:
-                net = vgg.net(vgg_path, vgg.preprocess(style_ph), reduce=True, reuse=False)
-            else:
-                net = vgg.net(vgg_path, vgg.preprocess(style_ph), reduce=False, reuse=False)
-            sess.run(tf.global_variables_initializer())
-            for layer_name in STYLE_LAYERS:
-                feature = net[layer_name].eval(feed_dict={
-                    style_ph: np.asarray([style_img])
-                })
-                feature = np.reshape(feature[0], (-1, feature.shape[3]))
-                gram = np.matmul(feature.T, feature) / feature.size
-                style_features[layer_name] =  gram
+def buildGraphAneLoss(gpu_idx, optimizer):
+    """
+        Build the graph of the whole network and loss function
 
-    # -------------------------------------------------------------------------------------------------------------------
-    # Build network
-    # -------------------------------------------------------------------------------------------------------------------
-    with tf.Graph().as_default():
-        soft_config = tf.ConfigProto(allow_soft_placement=True)
-        soft_config.gpu_options.allow_growth = True
-        soft_config.gpu_options.per_process_gpu_memory_fraction = 0.5
-        with tf.Session(config=soft_config) as sess:
+        Arg:    gpu_idx     - The index of the GPU
+                optimizer   - Tensorflow optimizer object
+        Ret:    1. The image placeholder object
+                2. The render network result op
+                3. The style loss op
+                4. The content loss op
+                5. The total variation loss op
+                6. The total loss op
+    """
+    global tower_grades
+
+    with tf.device('/gpu:%d'%(gpu_idx)):
+        with tf.name_scope('tower_%d'%(gpu_idx))as scope:
             # Origin image path
-            content_ph = tf.placeholder(tf.float32, shape=(batch_size, image_shape[1], image_shape[2], image_shape[3]))
+            if adopt_multiprocess == True:
+                content_ph = tf.placeholder(tf.float32, shape=(batch_size // len(device_list), image_shape[1], image_shape[2], image_shape[3]))
+            else:
+                content_ph = tf.placeholder(tf.float32, shape=(batch_size, image_shape[1], image_shape[2], image_shape[3]))
+
+            # Actual image path
             if adopt_revision == True:
                 net = vgg.net(vgg_path, vgg.preprocess(content_ph), reduce=True, reuse=False)
             else:
@@ -112,7 +119,60 @@ def train(content_image_name_list, style_img):
 
             # Total loss and optimizer
             loss = content_loss + style_loss + tv_loss
-            train_op = tf.train.AdamOptimizer(learning_rate).minimize(loss)
+            grads=optimizer.compute_gradients(loss,gate_gradients=2)
+            tower_grades.append(grads)
+    return content_ph, transfer_logits, style_loss, content_loss, tv_loss, loss
+
+def train(content_image_name_list, style_img):
+    """
+        Train the neural style transfer model
+
+        Arg:    content_image_name_list - The name list of training data
+                style_img               - The style image (ndarray type)
+    """
+    global style_features
+    global content_feature
+    global adopt_revision
+    global tower_grades
+
+    # -------------------------------------------------------------------------------------------------------------------
+    # Precompute gram matrix of style frature
+    # -------------------------------------------------------------------------------------------------------------------
+    style_shape = (1,) + style_img.shape
+    with tf.Graph().as_default():
+        style_ph = tf.placeholder(tf.float32, shape=style_shape, name='style_image')
+        with tf.Session() as sess:
+            if adopt_revision == True:
+                net = vgg.net(vgg_path, vgg.preprocess(style_ph), reduce=True, reuse=False)
+            else:
+                net = vgg.net(vgg_path, vgg.preprocess(style_ph), reduce=False, reuse=False)
+            sess.run(tf.global_variables_initializer())
+            for layer_name in STYLE_LAYERS:
+                feature = net[layer_name].eval(feed_dict={
+                    style_ph: np.asarray([style_img])
+                })
+                feature = np.reshape(feature[0], (-1, feature.shape[3]))
+                gram = np.matmul(feature.T, feature) / feature.size
+                style_features[layer_name] =  gram
+
+    # -------------------------------------------------------------------------------------------------------------------
+    # Build network
+    # -------------------------------------------------------------------------------------------------------------------
+    with tf.Graph().as_default():
+        soft_config = tf.ConfigProto(allow_soft_placement=True)
+        soft_config.gpu_options.allow_growth = True
+        soft_config.gpu_options.per_process_gpu_memory_fraction = 0.5
+        optimizer = tf.train.AdamOptimizer()
+
+        with tf.Session(config=soft_config) as sess:
+            with tf.variable_scope(tf.get_variable_scope()):
+                content_ph1, transfer_logits1, style_loss1, content_loss1, tv_loss1, loss1 = buildGraphAneLoss(0, optimizer)
+                if adopt_multiprocess == True:                
+                    content_ph2, transfer_logits2, style_loss2, content_loss2, tv_loss2, loss2 = buildGraphAneLoss(1, optimizer)
+
+            grads=average_gradients(tower_grades)
+            train_op = optimizer.apply_gradients(grads)
+            init_op=tf.group(tf.global_variables_initializer(),tf.local_variables_initializer())
 
             # ---------------------------------------------------------------------------------------------------------
             # Train
@@ -125,31 +185,36 @@ def train(content_image_name_list, style_img):
 
             # Run
             sess.run(tf.global_variables_initializer())
+            time_cost = time.time()
             for i in range(iteration):
                 # Get batch image
                 if adopt_multiprocess == True:
                     img_batch = img_queue.get()
+                    feed_dict = {
+                        content_ph1: img_batch[:len(img_batch) // 2],
+                        content_ph2: img_batch[len(img_batch) // 2:]
+                    }
                 else:
                     img_batch = get_img_batch_random(content_image_name_list, batch_size=batch_size)
+                    feed_dict = {
+                        content_ph1: img_batch[:len(img_batch)]
+                    }
 
                 # Update
-                _ = sess.run([train_op], feed_dict={
-                    content_ph: img_batch
-                })
+                _ = sess.run([train_op], feed_dict=feed_dict)
 
                 # Verbose
                 if i % evaluate_period == 0:
-                    _style_loss, _content_loss, _tv_loss, _loss = sess.run([style_loss, content_loss, tv_loss, loss], feed_dict={
-                        content_ph: img_batch
-                    })
-                    print("epoch: ", i, '\tstyle: ', _style_loss, '\tcontent: ', _content_loss, '\tTV: ', _tv_loss, '\ttotal: ', _loss, '\ttime: ', datetime.datetime.now().time())
-
-                    _style_result = sess.run([transfer_logits,], feed_dict={
-                        content_ph: img_batch
-                    })
+                    _style_loss1, _content_loss1, _tv_loss1, _loss1 = sess.run([style_loss1, content_loss1, tv_loss1, loss1], feed_dict=feed_dict)
+                    print("epoch: ", i, '\tstyle: ', _style_loss1, '\tcontent: ', _content_loss1, '\tTV: ', _tv_loss1, '\ttotal: ', _loss1, '\tgpu idx: 0', '\ttime: ', datetime.datetime.now().time())
+                    if adopt_multiprocess == True: 
+                        _style_loss2, _content_loss2, _tv_loss2, _loss2 = sess.run([style_loss2, content_loss2, tv_loss2, loss2], feed_dict=feed_dict)
+                        print("epoch: ", i, '\tstyle: ', _style_loss2, '\tcontent: ', _content_loss2, '\tTV: ', _tv_loss2, '\ttotal: ', _loss2, '\tgpu idx: 1', '\ttime: ', datetime.datetime.now().time())
+                    _style_result = sess.run([transfer_logits1,], feed_dict=feed_dict)                   
                     _style_result = np.concatenate((img_batch[0], _style_result[0][0]), axis=1)
                     save_img(str(i) + '.png', _style_result)
 
+            print("Training Time cost (s): ", time.time() - time_cost)
             if adopt_multiprocess == True:
                 get_img_proc.join()
             saver = tf.train.Saver()

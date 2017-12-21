@@ -8,6 +8,7 @@ import numpy as np
 import subprocess
 import threading
 import argparse
+import time
 import os
 
 # Flag to control if use inception structure & vgg revision
@@ -50,8 +51,9 @@ def work(in_files, out_files, device_id, total_device, device_idx):
                 else:
                     start = device_idx * int(len(in_files) // total_device)
                     end = device_idx * int(len(in_files) // total_device) + int(len(in_files) // total_device)
+                conduct_time = time.time()
                 for i in range(start, end, 1):
-                    print("progress: ", i, ' / ', end - start, '\t proc: ', device_idx)
+                    # print("progress: ", i, ' / ', end - start, '\t proc: ', device_idx)
                     img_batch = np.ndarray(image_shape)
                     for j, img_path in enumerate(in_files[i : i+1]):
                         img = get_img(img_path)
@@ -61,6 +63,8 @@ def work(in_files, out_files, device_id, total_device, device_idx):
                     })
                     for j, img_path in enumerate(out_files[i : i+1]):
                         save_img(img_path, _style_result[0][j])
+                conduct_time = time.time() - conduct_time
+                print("Conduct time: ", conduct_time)
             
 def stylize_video(in_files, out_files):
     """ 
@@ -111,8 +115,8 @@ if __name__ == '__main__':
         os.mkdir(out_dir)
 
     # Decode video into images
-    in_args = ['ffmpeg', '-i', video_path + video_input_name, '%s/frame_%%d.png' % in_dir]
-    subprocess.call(" ".join(in_args), shell=True)
+    # in_args = ['ffmpeg', '-i', video_path + video_input_name, '%s/frame_%%d.png' % in_dir]
+    # subprocess.call(" ".join(in_args), shell=True)
 
     # Assemble the list of the image name and transfer
     img_name_list = list_files(in_dir)
@@ -121,6 +125,6 @@ if __name__ == '__main__':
     stylize_video(in_files, out_files)
 
     # Encode as output video
-    frame_per_second = 30
-    out_args = ['ffmpeg', '-i', '%s/frame_%%d.png' % out_dir, '-f', 'mp4', '-q:v', '0', '-vcodec', 'mpeg4', '-r', str(frame_per_second), video_path + video_output_name]
-    subprocess.call(" ".join(out_args), shell=True)
+    # frame_per_second = 30
+    # out_args = ['ffmpeg', '-i', '%s/frame_%%d.png' % out_dir, '-f', 'mp4', '-q:v', '0', '-vcodec', 'mpeg4', '-r', str(frame_per_second), video_path + video_output_name]
+    # subprocess.call(" ".join(out_args), shell=True)
