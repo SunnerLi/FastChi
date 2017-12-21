@@ -115,8 +115,8 @@ if __name__ == '__main__':
         os.mkdir(out_dir)
 
     # Decode video into images
-    # in_args = ['ffmpeg', '-i', video_path + video_input_name, '%s/frame_%%d.png' % in_dir]
-    # subprocess.call(" ".join(in_args), shell=True)
+    in_args = ['ffmpeg', '-i', video_path + video_input_name, '%s/frame_%%d.png' % in_dir]
+    subprocess.call(" ".join(in_args), shell=True)
 
     # Assemble the list of the image name and transfer
     img_name_list = list_files(in_dir)
@@ -125,6 +125,6 @@ if __name__ == '__main__':
     stylize_video(in_files, out_files)
 
     # Encode as output video
-    # frame_per_second = 30
-    # out_args = ['ffmpeg', '-i', '%s/frame_%%d.png' % out_dir, '-f', 'mp4', '-q:v', '0', '-vcodec', 'mpeg4', '-r', str(frame_per_second), video_path + video_output_name]
-    # subprocess.call(" ".join(out_args), shell=True)
+    frame_per_second = 30
+    out_args = ['ffmpeg', '-i', '%s/frame_%%d.png' % out_dir, '-f', 'mp4', '-q:v', '0', '-vcodec', 'mpeg4', '-r', str(frame_per_second), video_path + video_output_name]
+    subprocess.call(" ".join(out_args), shell=True)
