@@ -1,4 +1,4 @@
-# FastChi – The Parallelized Fast Style Transfer toward Chi-chi video
+# FastChi - The Simple Acceleration Version of Fast Style Transfer toward Chi-chi Video
 
 [![Packagist](https://img.shields.io/badge/Tensorflow-1.3.0-yellow.svg)]()
 [![Packagist](https://img.shields.io/badge/Python-3.5.2-blue.svg)]()
@@ -7,7 +7,7 @@
 
 Abstraction
 ---
-The style transfer is a very popular problem in recent year. Moreover, there’re some application which use such kind of transferring into their product. However, the speed and performance are important issues that should be conquered. In Prisma, the smart phone should spend amount of time to transfer the image. To accelerate the style transferring procedure, we purpose the parallel structure toward this task, and speed up the procedure of transforming. The network will split the video as two parts, and use two GPU to transform the style to the content image in parallelism. For our expectation, the video which contains chi-chi (柴柴) will be transferred in very quick speed. 
+By style transfer mechanism, the style of another image can be illustrated toward another target picture. However, the speed of the computation is a tough problem. In this article, we purposed an accelerating version to enhance this disadvantage. We use pure CNN based method which contains render network and feature extractor network to transfer the chi-chi （柴柴） video.  The size of render network is reduced and the graphic process unit (GPU) is used to accelerate the computation. We also use multi-thread to speed up the process of image reading. By this improvement, the speed of reading can be accelerated up to about 15 times and the speed of transformation can be accelerated up to 1.86 times.
 
 Usage
 ---

@@ -1,0 +1,400 @@
+epoch:  0       style:  5.4516e+11      content:  1.65372e+12   TV:  3.22638e+06        total:  2.19889e+12     time:  14:09:46.048717
+max:  277.5
+epoch:  10      style:  2.70671e+11     content:  1.62746e+12   TV:  2.35811e+06        total:  1.89813e+12     time:  14:09:54.188346
+max:  277.5
+epoch:  20      style:  1.51764e+11     content:  1.95114e+12   TV:  2.58363e+06        total:  2.1029e+12      time:  14:10:02.510868
+max:  277.5
+epoch:  30      style:  9.58916e+10     content:  2.04876e+12   TV:  2.45994e+06        total:  2.14466e+12     time:  14:10:10.901381
+max:  277.5
+epoch:  40      style:  6.99741e+10     content:  2.11873e+12   TV:  2.47244e+06        total:  2.18871e+12     time:  14:10:19.243131
+max:  277.5
+epoch:  50      style:  5.66946e+10     content:  2.13838e+12   TV:  2.48303e+06        total:  2.19508e+12     time:  14:10:27.398701
+max:  277.5
+epoch:  60      style:  4.8147e+10      content:  2.13148e+12   TV:  2.52382e+06        total:  2.17962e+12     time:  14:10:35.553176
+max:  277.5
+epoch:  70      style:  4.19149e+10     content:  2.12649e+12   TV:  2.5679e+06         total:  2.16841e+12     time:  14:10:43.712738
+max:  277.5
+epoch:  80      style:  3.71664e+10     content:  2.12311e+12   TV:  2.60585e+06        total:  2.16028e+12     time:  14:10:51.871321
+max:  277.5
+epoch:  90      style:  3.33582e+10     content:  2.11917e+12   TV:  2.63815e+06        total:  2.15253e+12     time:  14:11:00.044521
+max:  277.5
+epoch:  100     style:  3.02137e+10     content:  2.11431e+12   TV:  2.67006e+06        total:  2.14453e+12     time:  14:11:08.215978
+max:  277.5
+epoch:  110     style:  2.75003e+10     content:  2.10963e+12   TV:  2.7083e+06         total:  2.13713e+12     time:  14:11:16.402341
+max:  277.5
+epoch:  120     style:  2.51277e+10     content:  2.10647e+12   TV:  2.74188e+06        total:  2.1316e+12      time:  14:11:24.578954
+max:  277.5
+epoch:  130     style:  2.30787e+10     content:  2.10511e+12   TV:  2.77436e+06        total:  2.12819e+12     time:  14:11:33.028351
+max:  277.5
+epoch:  140     style:  2.12918e+10     content:  2.10416e+12   TV:  2.80356e+06        total:  2.12546e+12     time:  14:11:41.208702
+max:  277.5
+epoch:  150     style:  1.9707e+10      content:  2.10258e+12   TV:  2.82895e+06        total:  2.12229e+12     time:  14:11:49.384566
+max:  277.5
+epoch:  160     style:  1.83065e+10     content:  2.10262e+12   TV:  2.84877e+06        total:  2.12093e+12     time:  14:11:57.561465
+max:  277.5
+epoch:  170     style:  1.70615e+10     content:  2.10288e+12   TV:  2.86557e+06        total:  2.11994e+12     time:  14:12:05.741684
+max:  277.5
+epoch:  180     style:  1.59507e+10     content:  2.10421e+12   TV:  2.8814e+06         total:  2.12017e+12     time:  14:12:13.932179
+max:  277.5
+epoch:  190     style:  1.49632e+10     content:  2.10581e+12   TV:  2.89503e+06        total:  2.12077e+12     time:  14:12:22.112744
+max:  277.5
+epoch:  200     style:  1.40935e+10     content:  2.10868e+12   TV:  2.90698e+06        total:  2.12278e+12     time:  14:12:30.292676
+max:  277.5
+epoch:  210     style:  1.33229e+10     content:  2.11072e+12   TV:  2.91947e+06        total:  2.12405e+12     time:  14:12:38.491610
+max:  277.5
+epoch:  220     style:  1.26359e+10     content:  2.11304e+12   TV:  2.93152e+06        total:  2.12568e+12     time:  14:12:46.667338
+max:  277.5
+epoch:  230     style:  1.20157e+10     content:  2.11494e+12   TV:  2.94222e+06        total:  2.12696e+12     time:  14:12:54.843480
+max:  277.5
+epoch:  240     style:  1.14519e+10     content:  2.11684e+12   TV:  2.95194e+06        total:  2.12829e+12     time:  14:13:03.023627
+max:  277.5
+epoch:  250     style:  1.09394e+10     content:  2.11891e+12   TV:  2.95984e+06        total:  2.12985e+12     time:  14:13:11.216583
+max:  277.5
+epoch:  260     style:  1.04724e+10     content:  2.12059e+12   TV:  2.968e+06  total:  2.13106e+12     time:  14:13:19.394242
+max:  277.5
+epoch:  270     style:  1.00441e+10     content:  2.12239e+12   TV:  2.9758e+06         total:  2.13244e+12     time:  14:13:27.575481
+max:  277.5
+epoch:  280     style:  9.64871e+09     content:  2.12445e+12   TV:  2.98236e+06        total:  2.13411e+12     time:  14:13:35.760772
+max:  277.5
+epoch:  290     style:  9.2835e+09      content:  2.12656e+12   TV:  2.98764e+06        total:  2.13584e+12     time:  14:13:43.938621
+max:  277.5
+epoch:  300     style:  8.94362e+09     content:  2.12828e+12   TV:  2.99336e+06        total:  2.13723e+12     time:  14:13:52.122188
+max:  277.5
+epoch:  310     style:  8.62521e+09     content:  2.13016e+12   TV:  2.99908e+06        total:  2.13878e+12     time:  14:14:00.304216
+max:  277.5
+epoch:  320     style:  8.32615e+09     content:  2.1321e+12    TV:  3.00454e+06        total:  2.14043e+12     time:  14:14:08.484386
+max:  277.5
+epoch:  330     style:  8.04331e+09     content:  2.13364e+12   TV:  3.01001e+06        total:  2.14169e+12     time:  14:14:16.666373
+max:  277.5
+epoch:  340     style:  7.77671e+09     content:  2.13546e+12   TV:  3.01449e+06        total:  2.14324e+12     time:  14:14:24.853093
+max:  277.5
+epoch:  350     style:  7.52451e+09     content:  2.13717e+12   TV:  3.01859e+06        total:  2.14469e+12     time:  14:14:33.034203
+max:  277.5
+epoch:  360     style:  7.28526e+09     content:  2.13891e+12   TV:  3.02246e+06        total:  2.1462e+12      time:  14:14:41.215326
+max:  277.5
+epoch:  370     style:  7.05806e+09     content:  2.14086e+12   TV:  3.0263e+06         total:  2.14792e+12     time:  14:14:49.392197
+max:  277.5
+epoch:  380     style:  6.84219e+09     content:  2.14259e+12   TV:  3.02984e+06        total:  2.14944e+12     time:  14:14:57.574849
+max:  277.5
+epoch:  390     style:  6.63714e+09     content:  2.14514e+12   TV:  3.03358e+06        total:  2.15178e+12     time:  14:15:05.757038
+max:  277.5
+epoch:  400     style:  6.61745e+09     content:  2.16588e+12   TV:  3.03821e+06        total:  2.1725e+12      time:  14:15:13.949260
+max:  277.5
+epoch:  410     style:  6.33384e+09     content:  2.16044e+12   TV:  3.04371e+06        total:  2.16678e+12     time:  14:15:22.132394
+max:  277.5
+epoch:  420     style:  6.10212e+09     content:  2.15614e+12   TV:  3.04694e+06        total:  2.16225e+12     time:  14:15:30.312614
+max:  277.5
+epoch:  430     style:  5.94384e+09     content:  2.14318e+12   TV:  3.04785e+06        total:  2.14913e+12     time:  14:15:38.495440
+max:  277.5
+epoch:  440     style:  5.79639e+09     content:  2.1621e+12    TV:  3.05366e+06        total:  2.16789e+12     time:  14:15:46.678581
+max:  277.5
+epoch:  450     style:  5.61757e+09     content:  2.14861e+12   TV:  3.05663e+06        total:  2.15423e+12     time:  14:15:54.860060
+max:  277.5
+epoch:  460     style:  5.45997e+09     content:  2.15465e+12   TV:  3.05971e+06        total:  2.16011e+12     time:  14:16:03.044986
+max:  277.5
+epoch:  470     style:  5.52347e+09     content:  2.17769e+12   TV:  3.06536e+06        total:  2.18322e+12     time:  14:16:11.233784
+max:  277.5
+epoch:  480     style:  5.29576e+09     content:  2.17273e+12   TV:  3.06569e+06        total:  2.17803e+12     time:  14:16:19.418461
+max:  277.5
+epoch:  490     style:  5.11425e+09     content:  2.16924e+12   TV:  3.0712e+06         total:  2.17435e+12     time:  14:16:27.601982
+max:  277.5
+epoch:  500     style:  4.95152e+09     content:  2.15875e+12   TV:  3.072e+06  total:  2.1637e+12      time:  14:16:35.789051
+max:  277.5
+epoch:  510     style:  4.84861e+09     content:  2.16823e+12   TV:  3.07267e+06        total:  2.17308e+12     time:  14:16:43.972328
+max:  277.5
+epoch:  520     style:  4.7338e+09      content:  2.15773e+12   TV:  3.07637e+06        total:  2.16247e+12     time:  14:16:52.153663
+max:  277.5
+epoch:  530     style:  4.86893e+09     content:  2.16686e+12   TV:  3.08528e+06        total:  2.17173e+12     time:  14:17:00.335218
+max:  277.5
+epoch:  540     style:  4.87622e+09     content:  2.18076e+12   TV:  3.08117e+06        total:  2.18564e+12     time:  14:17:08.517789
+max:  277.5
+epoch:  550     style:  4.54526e+09     content:  2.16586e+12   TV:  3.07625e+06        total:  2.17041e+12     time:  14:17:16.701706
+max:  277.5
+epoch:  560     style:  4.37696e+09     content:  2.16953e+12   TV:  3.08489e+06        total:  2.17391e+12     time:  14:17:24.904429
+max:  277.5
+epoch:  570     style:  4.2467e+09      content:  2.16671e+12   TV:  3.08128e+06        total:  2.17096e+12     time:  14:17:33.088963
+max:  277.5
+epoch:  580     style:  4.14347e+09     content:  2.17097e+12   TV:  3.08834e+06        total:  2.17511e+12     time:  14:17:41.278342
+max:  277.5
+epoch:  590     style:  4.37376e+09     content:  2.16546e+12   TV:  3.12104e+06        total:  2.16984e+12     time:  14:17:49.466053
+max:  277.5
+epoch:  600     style:  4.08032e+09     content:  2.16413e+12   TV:  3.09808e+06        total:  2.16821e+12     time:  14:17:57.647887
+max:  277.5
+epoch:  610     style:  3.93934e+09     content:  2.1718e+12    TV:  3.09256e+06        total:  2.17574e+12     time:  14:18:05.833619
+max:  277.5
+epoch:  620     style:  3.84565e+09     content:  2.17737e+12   TV:  3.09852e+06        total:  2.18122e+12     time:  14:18:14.025564
+max:  277.5
+epoch:  630     style:  3.75826e+09     content:  2.1792e+12    TV:  3.09757e+06        total:  2.18296e+12     time:  14:18:22.219528
+max:  277.5
+epoch:  640     style:  3.69448e+09     content:  2.17144e+12   TV:  3.10767e+06        total:  2.17513e+12     time:  14:18:30.402514
+max:  277.5
+epoch:  650     style:  3.64366e+09     content:  2.18497e+12   TV:  3.10269e+06        total:  2.18861e+12     time:  14:18:38.582901
+max:  277.5
+epoch:  660     style:  3.57223e+09     content:  2.16617e+12   TV:  3.10377e+06        total:  2.16975e+12     time:  14:18:46.760423
+max:  277.5
+epoch:  670     style:  3.48833e+09     content:  2.17695e+12   TV:  3.09836e+06        total:  2.18044e+12     time:  14:18:54.942557
+max:  277.5
+epoch:  680     style:  3.56927e+09     content:  2.1896e+12    TV:  3.10549e+06        total:  2.19317e+12     time:  14:19:03.121537
+max:  277.5
+epoch:  690     style:  3.38769e+09     content:  2.17725e+12   TV:  3.10509e+06        total:  2.18064e+12     time:  14:19:11.301618
+max:  277.5
+epoch:  700     style:  3.56073e+09     content:  2.17853e+12   TV:  3.0738e+06         total:  2.18209e+12     time:  14:19:19.485235
+max:  277.5
+epoch:  710     style:  3.34205e+09     content:  2.17969e+12   TV:  3.12118e+06        total:  2.18303e+12     time:  14:19:27.679430
+max:  277.5
+epoch:  720     style:  3.40567e+09     content:  2.16477e+12   TV:  3.10219e+06        total:  2.16817e+12     time:  14:19:35.864398
+max:  277.5
+epoch:  730     style:  3.19006e+09     content:  2.1765e+12    TV:  3.10645e+06        total:  2.17969e+12     time:  14:19:44.041948
+max:  277.5
+epoch:  740     style:  3.11392e+09     content:  2.18253e+12   TV:  3.10447e+06        total:  2.18565e+12     time:  14:19:52.225861
+max:  277.5
+epoch:  750     style:  3.05898e+09     content:  2.17983e+12   TV:  3.1215e+06         total:  2.18289e+12     time:  14:20:00.412920
+max:  277.5
+epoch:  760     style:  3.04952e+09     content:  2.19445e+12   TV:  3.12189e+06        total:  2.1975e+12      time:  14:20:08.599624
+max:  277.5
+epoch:  770     style:  2.95549e+09     content:  2.19141e+12   TV:  3.11768e+06        total:  2.19437e+12     time:  14:20:16.783873
+max:  277.5
+epoch:  780     style:  2.96593e+09     content:  2.18613e+12   TV:  3.13098e+06        total:  2.1891e+12      time:  14:20:24.969172
+max:  277.5
+epoch:  790     style:  3.01578e+09     content:  2.19232e+12   TV:  3.13984e+06        total:  2.19534e+12     time:  14:20:33.150077
+max:  277.5
+epoch:  800     style:  9.7892e+09      content:  2.17296e+12   TV:  2.94542e+06        total:  2.18275e+12     time:  14:20:41.337458
+max:  277.5
+epoch:  810     style:  1.49632e+10     content:  2.08432e+12   TV:  2.91543e+06        total:  2.09929e+12     time:  14:20:49.514888
+max:  277.5
+epoch:  820     style:  1.08172e+10     content:  2.13894e+12   TV:  2.93732e+06        total:  2.14976e+12     time:  14:20:57.708122
+max:  277.5
+epoch:  830     style:  7.41683e+09     content:  2.12567e+12   TV:  3.11362e+06        total:  2.13309e+12     time:  14:21:05.892503
+max:  277.5
+epoch:  840     style:  5.80669e+09     content:  2.14706e+12   TV:  3.13681e+06        total:  2.15287e+12     time:  14:21:14.084379
+max:  277.5
+epoch:  850     style:  4.91078e+09     content:  2.16197e+12   TV:  3.14564e+06        total:  2.16689e+12     time:  14:21:22.274353
+max:  277.5
+epoch:  860     style:  4.36027e+09     content:  2.16529e+12   TV:  3.16204e+06        total:  2.16965e+12     time:  14:21:30.455701
+max:  277.5
+epoch:  870     style:  3.99594e+09     content:  2.17021e+12   TV:  3.16719e+06        total:  2.17421e+12     time:  14:21:38.635124
+max:  277.5
+epoch:  880     style:  3.73448e+09     content:  2.17402e+12   TV:  3.16611e+06        total:  2.17776e+12     time:  14:21:46.822101
+max:  277.5
+epoch:  890     style:  3.5339e+09      content:  2.17664e+12   TV:  3.16996e+06        total:  2.18017e+12     time:  14:21:55.011148
+max:  277.5
+epoch:  900     style:  3.37437e+09     content:  2.17861e+12   TV:  3.17295e+06        total:  2.18198e+12     time:  14:22:03.200239
+max:  277.5
+epoch:  910     style:  3.2432e+09      content:  2.18071e+12   TV:  3.17483e+06        total:  2.18395e+12     time:  14:22:11.391252
+max:  277.5
+epoch:  920     style:  3.13185e+09     content:  2.18266e+12   TV:  3.17547e+06        total:  2.18579e+12     time:  14:22:19.577558
+max:  277.5
+epoch:  930     style:  3.03525e+09     content:  2.18426e+12   TV:  3.17589e+06        total:  2.1873e+12      time:  14:22:27.781055
+max:  277.5
+epoch:  940     style:  2.95006e+09     content:  2.18583e+12   TV:  3.17604e+06        total:  2.18879e+12     time:  14:22:35.964796
+max:  277.5
+epoch:  950     style:  2.87375e+09     content:  2.18728e+12   TV:  3.17484e+06        total:  2.19016e+12     time:  14:22:44.149255
+max:  277.5
+epoch:  960     style:  2.80448e+09     content:  2.18864e+12   TV:  3.17362e+06        total:  2.19145e+12     time:  14:22:52.352819
+max:  277.5
+epoch:  970     style:  2.74129e+09     content:  2.18985e+12   TV:  3.1726e+06         total:  2.19259e+12     time:  14:23:00.540097
+max:  277.5
+epoch:  980     style:  2.68301e+09     content:  2.19109e+12   TV:  3.17172e+06        total:  2.19378e+12     time:  14:23:08.728666
+max:  277.5
+epoch:  990     style:  2.62883e+09     content:  2.19226e+12   TV:  3.17108e+06        total:  2.1949e+12      time:  14:23:16.924466
+max:  277.5
+epoch:  1000    style:  2.57812e+09     content:  2.19324e+12   TV:  3.16999e+06        total:  2.19583e+12     time:  14:23:25.122925
+max:  277.5
+epoch:  1010    style:  2.5304e+09      content:  2.1941e+12    TV:  3.16868e+06        total:  2.19663e+12     time:  14:23:33.304870
+max:  277.5
+epoch:  1020    style:  2.48539e+09     content:  2.19491e+12   TV:  3.16747e+06        total:  2.1974e+12      time:  14:23:41.483280
+max:  277.5
+epoch:  1030    style:  2.44284e+09     content:  2.19561e+12   TV:  3.16694e+06        total:  2.19806e+12     time:  14:23:49.664724
+max:  277.5
+epoch:  1040    style:  2.40317e+09     content:  2.19563e+12   TV:  3.16594e+06        total:  2.19804e+12     time:  14:23:57.848012
+max:  277.5
+epoch:  1050    style:  2.36425e+09     content:  2.19644e+12   TV:  3.16495e+06        total:  2.1988e+12      time:  14:24:06.035682
+max:  277.5
+epoch:  1060    style:  2.33178e+09     content:  2.20017e+12   TV:  3.16295e+06        total:  2.2025e+12      time:  14:24:14.228335
+max:  277.5
+epoch:  1070    style:  2.29811e+09     content:  2.19632e+12   TV:  3.16498e+06        total:  2.19862e+12     time:  14:24:22.416922
+max:  277.5
+epoch:  1080    style:  2.26113e+09     content:  2.20134e+12   TV:  3.16179e+06        total:  2.2036e+12      time:  14:24:30.600476
+max:  277.5
+epoch:  1090    style:  2.22647e+09     content:  2.19851e+12   TV:  3.16328e+06        total:  2.20074e+12     time:  14:24:38.904730
+max:  277.5
+epoch:  1100    style:  2.19281e+09     content:  2.20071e+12   TV:  3.16188e+06        total:  2.20291e+12     time:  14:24:47.095592
+max:  277.5
+epoch:  1110    style:  2.16366e+09     content:  2.20201e+12   TV:  3.16087e+06        total:  2.20417e+12     time:  14:24:55.288979
+max:  277.5
+epoch:  1120    style:  2.13332e+09     content:  2.20152e+12   TV:  3.16123e+06        total:  2.20365e+12     time:  14:25:03.493148
+max:  277.5
+epoch:  1130    style:  2.10522e+09     content:  2.20267e+12   TV:  3.16054e+06        total:  2.20478e+12     time:  14:25:11.684966
+max:  277.5
+epoch:  1140    style:  2.08774e+09     content:  2.19934e+12   TV:  3.16171e+06        total:  2.20143e+12     time:  14:25:19.922965
+max:  277.5
+epoch:  1150    style:  2.0512e+09      content:  2.20387e+12   TV:  3.15882e+06        total:  2.20592e+12     time:  14:25:28.115400
+max:  277.5
+epoch:  1160    style:  2.03489e+09     content:  2.20048e+12   TV:  3.16004e+06        total:  2.20252e+12     time:  14:25:36.304606
+max:  277.5
+epoch:  1170    style:  2.00564e+09     content:  2.20603e+12   TV:  3.15544e+06        total:  2.20804e+12     time:  14:25:44.493706
+max:  277.5
+epoch:  1180    style:  2.0059e+09      content:  2.2004e+12    TV:  3.15946e+06        total:  2.2024e+12      time:  14:25:52.693906
+max:  277.5
+epoch:  1190    style:  1.96488e+09     content:  2.20255e+12   TV:  3.15657e+06        total:  2.20452e+12     time:  14:26:00.894372
+max:  277.5
+epoch:  1200    style:  1.95416e+09     content:  2.19917e+12   TV:  3.1553e+06         total:  2.20113e+12     time:  14:26:09.085629
+max:  277.5
+epoch:  1210    style:  1.98086e+09     content:  2.20221e+12   TV:  3.15685e+06        total:  2.2042e+12      time:  14:26:17.378497
+max:  277.5
+epoch:  1220    style:  2.395e+09       content:  2.19316e+12   TV:  3.13789e+06        total:  2.19556e+12     time:  14:26:25.849200
+max:  277.5
+epoch:  1230    style:  2.51375e+09     content:  2.19892e+12   TV:  3.16026e+06        total:  2.20143e+12     time:  14:26:34.314844
+max:  277.5
+epoch:  1240    style:  2.10743e+09     content:  2.20715e+12   TV:  3.12331e+06        total:  2.20926e+12     time:  14:26:42.656740
+max:  277.5
+epoch:  1250    style:  1.96264e+09     content:  2.20734e+12   TV:  3.14808e+06        total:  2.20931e+12     time:  14:26:50.885828
+max:  277.5
+epoch:  1260    style:  1.87869e+09     content:  2.21007e+12   TV:  3.14993e+06        total:  2.21196e+12     time:  14:26:59.094226
+max:  277.5
+epoch:  1270    style:  1.8312e+09      content:  2.21038e+12   TV:  3.14093e+06        total:  2.21221e+12     time:  14:27:07.375403
+max:  277.5
+epoch:  1280    style:  1.79546e+09     content:  2.21047e+12   TV:  3.14448e+06        total:  2.21227e+12     time:  14:27:15.596800
+max:  277.5
+epoch:  1290    style:  1.76796e+09     content:  2.21146e+12   TV:  3.14398e+06        total:  2.21323e+12     time:  14:27:24.013470
+max:  277.5
+epoch:  1300    style:  1.74397e+09     content:  2.21168e+12   TV:  3.14238e+06        total:  2.21342e+12     time:  14:27:32.240840
+max:  277.5
+epoch:  1310    style:  1.72222e+09     content:  2.21203e+12   TV:  3.14112e+06        total:  2.21375e+12     time:  14:27:40.426813
+max:  277.5
+epoch:  1320    style:  1.7019e+09      content:  2.21234e+12   TV:  3.14031e+06        total:  2.21404e+12     time:  14:27:48.619586
+max:  277.5
+epoch:  1330    style:  1.6826e+09      content:  2.21266e+12   TV:  3.13922e+06        total:  2.21435e+12     time:  14:27:56.837041
+max:  277.5
+epoch:  1340    style:  1.66404e+09     content:  2.21306e+12   TV:  3.13822e+06        total:  2.21473e+12     time:  14:28:05.024463
+max:  277.5
+epoch:  1350    style:  1.64617e+09     content:  2.21346e+12   TV:  3.13723e+06        total:  2.21511e+12     time:  14:28:13.361210
+max:  277.5
+epoch:  1360    style:  1.62913e+09     content:  2.21451e+12   TV:  3.1363e+06         total:  2.21614e+12     time:  14:28:21.542790
+max:  277.5
+epoch:  1370    style:  1.68485e+09     content:  2.22702e+12   TV:  3.13765e+06        total:  2.22871e+12     time:  14:28:29.725731
+max:  277.5
+epoch:  1380    style:  1.62077e+09     content:  2.22143e+12   TV:  3.1335e+06         total:  2.22306e+12     time:  14:28:37.911747
+max:  277.5
+epoch:  1390    style:  1.5917e+09      content:  2.21795e+12   TV:  3.13238e+06        total:  2.21954e+12     time:  14:28:46.099755
+max:  277.5
+epoch:  1400    style:  1.56769e+09     content:  2.21503e+12   TV:  3.13215e+06        total:  2.21661e+12     time:  14:28:54.383495
+max:  277.5
+epoch:  1410    style:  1.55141e+09     content:  2.21604e+12   TV:  3.13027e+06        total:  2.2176e+12      time:  14:29:02.573654
+max:  277.5
+epoch:  1420    style:  1.53577e+09     content:  2.2143e+12    TV:  3.13086e+06        total:  2.21584e+12     time:  14:29:10.782394
+max:  277.5
+epoch:  1430    style:  1.62632e+09     content:  2.20173e+12   TV:  3.12808e+06        total:  2.20336e+12     time:  14:29:18.948545
+max:  277.5
+epoch:  1440    style:  1.68165e+09     content:  2.2223e+12    TV:  3.12896e+06        total:  2.22398e+12     time:  14:29:27.114581
+max:  277.5
+epoch:  1450    style:  4.05444e+09     content:  2.20347e+12   TV:  3.08021e+06        total:  2.20752e+12     time:  14:29:35.278547
+max:  277.5
+epoch:  1460    style:  2.71246e+09     content:  2.19021e+12   TV:  3.0735e+06         total:  2.19293e+12     time:  14:29:43.443735
+max:  277.5
+epoch:  1470    style:  2.14691e+09     content:  2.20668e+12   TV:  3.103e+06  total:  2.20883e+12     time:  14:29:51.642415
+max:  277.5
+epoch:  1480    style:  1.87982e+09     content:  2.21949e+12   TV:  3.10851e+06        total:  2.22137e+12     time:  14:29:59.856703
+max:  277.5
+epoch:  1490    style:  1.73738e+09     content:  2.22159e+12   TV:  3.12516e+06        total:  2.22333e+12     time:  14:30:08.048505
+max:  277.5
+epoch:  1500    style:  1.64832e+09     content:  2.22325e+12   TV:  3.12345e+06        total:  2.22491e+12     time:  14:30:16.255916
+max:  277.5
+epoch:  1510    style:  1.59008e+09     content:  2.22276e+12   TV:  3.11897e+06        total:  2.22435e+12     time:  14:30:24.452563
+max:  277.5
+epoch:  1520    style:  1.54755e+09     content:  2.22186e+12   TV:  3.12052e+06        total:  2.22341e+12     time:  14:30:32.653811
+max:  277.5
+epoch:  1530    style:  1.51402e+09     content:  2.2232e+12    TV:  3.11826e+06        total:  2.22472e+12     time:  14:30:40.843107
+max:  277.5
+epoch:  1540    style:  1.48629e+09     content:  2.2233e+12    TV:  3.11801e+06        total:  2.22479e+12     time:  14:30:49.034753
+max:  277.5
+epoch:  1550    style:  1.46311e+09     content:  2.22464e+12   TV:  3.1174e+06         total:  2.2261e+12      time:  14:30:57.231134
+max:  277.5
+epoch:  1560    style:  1.48774e+09     content:  2.23447e+12   TV:  3.11602e+06        total:  2.23597e+12     time:  14:31:05.422176
+max:  277.5
+epoch:  1570    style:  1.43939e+09     content:  2.22976e+12   TV:  3.11647e+06        total:  2.23121e+12     time:  14:31:13.625197
+max:  277.5
+epoch:  1580    style:  1.40589e+09     content:  2.22313e+12   TV:  3.11732e+06        total:  2.22454e+12     time:  14:31:21.827585
+max:  277.5
+epoch:  1590    style:  1.38907e+09     content:  2.22319e+12   TV:  3.11505e+06        total:  2.22458e+12     time:  14:31:30.018395
+max:  277.5
+epoch:  1600    style:  1.38424e+09     content:  2.21908e+12   TV:  3.11477e+06        total:  2.22047e+12     time:  14:31:38.208887
+max:  277.5
+epoch:  1610    style:  1.35825e+09     content:  2.2248e+12    TV:  3.11274e+06        total:  2.22616e+12     time:  14:31:46.478998
+max:  277.5
+epoch:  1620    style:  1.3562e+09      content:  2.23035e+12   TV:  3.11342e+06        total:  2.23171e+12     time:  14:31:54.761046
+max:  277.5
+epoch:  1630    style:  1.33494e+09     content:  2.22399e+12   TV:  3.11453e+06        total:  2.22533e+12     time:  14:32:02.929868
+max:  277.5
+epoch:  1640    style:  1.34187e+09     content:  2.21848e+12   TV:  3.11318e+06        total:  2.21983e+12     time:  14:32:11.106631
+max:  277.5
+epoch:  1650    style:  1.32417e+09     content:  2.22289e+12   TV:  3.1142e+06         total:  2.22422e+12     time:  14:32:19.270292
+max:  277.5
+epoch:  1660    style:  1.30359e+09     content:  2.23055e+12   TV:  3.10994e+06        total:  2.23186e+12     time:  14:32:27.436051
+max:  277.5
+epoch:  1670    style:  1.28832e+09     content:  2.22607e+12   TV:  3.10582e+06        total:  2.22736e+12     time:  14:32:35.652561
+max:  277.5
+epoch:  1680    style:  1.31923e+09     content:  2.23718e+12   TV:  3.11e+06   total:  2.23851e+12     time:  14:32:43.881601
+max:  277.5
+epoch:  1690    style:  1.31264e+09     content:  2.21581e+12   TV:  3.10307e+06        total:  2.21713e+12     time:  14:32:52.123781
+max:  277.5
+epoch:  1700    style:  1.25429e+09     content:  2.2233e+12    TV:  3.10834e+06        total:  2.22455e+12     time:  14:33:00.350404
+max:  277.5
+epoch:  1710    style:  1.2388e+09      content:  2.22627e+12   TV:  3.1076e+06         total:  2.22751e+12     time:  14:33:08.580962
+max:  277.5
+epoch:  1720    style:  1.22534e+09     content:  2.22524e+12   TV:  3.10347e+06        total:  2.22647e+12     time:  14:33:16.815909
+max:  277.5
+epoch:  1730    style:  1.21543e+09     content:  2.22468e+12   TV:  3.10336e+06        total:  2.2259e+12      time:  14:33:25.061188
+max:  277.5
+epoch:  1740    style:  1.62149e+09     content:  2.19593e+12   TV:  3.08337e+06        total:  2.19756e+12     time:  14:33:33.278159
+max:  277.5
+epoch:  1750    style:  6.04574e+09     content:  2.10173e+12   TV:  3.05159e+06        total:  2.10778e+12     time:  14:33:41.496794
+max:  277.5
+epoch:  1760    style:  6.70555e+09     content:  2.1537e+12    TV:  2.95678e+06        total:  2.16041e+12     time:  14:33:50.100057
+max:  277.5
+epoch:  1770    style:  4.04667e+09     content:  2.15943e+12   TV:  3.09763e+06        total:  2.16348e+12     time:  14:33:58.854914
+max:  277.5
+epoch:  1780    style:  2.82338e+09     content:  2.19113e+12   TV:  3.08958e+06        total:  2.19396e+12     time:  14:34:07.577506
+max:  277.5
+epoch:  1790    style:  2.252e+09       content:  2.2016e+12    TV:  3.09787e+06        total:  2.20385e+12     time:  14:34:16.093594
+max:  277.5
+epoch:  1800    style:  1.94101e+09     content:  2.20547e+12   TV:  3.10442e+06        total:  2.20741e+12     time:  14:34:24.393431
+max:  277.5
+epoch:  1810    style:  1.75876e+09     content:  2.21147e+12   TV:  3.11604e+06        total:  2.21323e+12     time:  14:34:32.703723
+max:  277.5
+epoch:  1820    style:  1.63878e+09     content:  2.21442e+12   TV:  3.11837e+06        total:  2.21607e+12     time:  14:34:41.009158
+max:  277.5
+epoch:  1830    style:  1.55293e+09     content:  2.21634e+12   TV:  3.11988e+06        total:  2.2179e+12      time:  14:34:49.240323
+max:  277.5
+epoch:  1840    style:  1.48704e+09     content:  2.21788e+12   TV:  3.11899e+06        total:  2.21937e+12     time:  14:34:57.470532
+max:  277.5
+epoch:  1850    style:  1.43414e+09     content:  2.21918e+12   TV:  3.11705e+06        total:  2.22061e+12     time:  14:35:05.703219
+max:  277.5
+epoch:  1860    style:  1.39013e+09     content:  2.22007e+12   TV:  3.11579e+06        total:  2.22146e+12     time:  14:35:13.937301
+max:  277.5
+epoch:  1870    style:  1.3528e+09      content:  2.22069e+12   TV:  3.11471e+06        total:  2.22205e+12     time:  14:35:22.183240
+max:  277.5
+epoch:  1880    style:  1.32052e+09     content:  2.22152e+12   TV:  3.11305e+06        total:  2.22284e+12     time:  14:35:30.409834
+max:  277.5
+epoch:  1890    style:  1.29217e+09     content:  2.22218e+12   TV:  3.11127e+06        total:  2.22348e+12     time:  14:35:38.630932
+max:  277.5
+epoch:  1900    style:  1.26705e+09     content:  2.22274e+12   TV:  3.10979e+06        total:  2.22401e+12     time:  14:35:46.859435
+max:  277.5
+epoch:  1910    style:  1.2444e+09      content:  2.22314e+12   TV:  3.10752e+06        total:  2.22439e+12     time:  14:35:55.091446
+max:  277.5
+epoch:  1920    style:  1.22376e+09     content:  2.22372e+12   TV:  3.10554e+06        total:  2.22495e+12     time:  14:36:03.319385
+max:  277.5
+epoch:  1930    style:  1.2048e+09      content:  2.22412e+12   TV:  3.10385e+06        total:  2.22533e+12     time:  14:36:11.541999
+max:  277.5
+epoch:  1940    style:  1.18729e+09     content:  2.22442e+12   TV:  3.10212e+06        total:  2.22561e+12     time:  14:36:19.775768
+max:  277.5
+epoch:  1950    style:  1.1717e+09      content:  2.22355e+12   TV:  3.10049e+06        total:  2.22472e+12     time:  14:36:28.016216
+max:  277.5
+epoch:  1960    style:  1.26974e+09     content:  2.20755e+12   TV:  3.1034e+06         total:  2.20882e+12     time:  14:36:36.248062
+max:  277.5
+epoch:  1970    style:  1.16544e+09     content:  2.21823e+12   TV:  3.10227e+06        total:  2.2194e+12      time:  14:36:44.547521
+max:  277.5
+epoch:  1980    style:  1.13069e+09     content:  2.22714e+12   TV:  3.10092e+06        total:  2.22827e+12     time:  14:36:52.784859
+max:  277.5
+epoch:  1990    style:  1.11922e+09     content:  2.22885e+12   TV:  3.09906e+06        total:  2.22997e+12     time:  14:37:01.022277
+max:  277.5

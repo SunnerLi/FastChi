@@ -1,0 +1,400 @@
+epoch:  0       style:  569.247         time:  17:41:50.382498
+epoch:  10      style:  469.527         time:  17:41:59.159468
+epoch:  20      style:  444.288         time:  17:42:07.703159
+epoch:  30      style:  430.039         time:  17:42:16.675243
+epoch:  40      style:  422.493         time:  17:42:26.515414
+epoch:  50      style:  417.378         time:  17:42:35.768809
+epoch:  60      style:  412.077         time:  17:42:44.953157
+epoch:  70      style:  406.854         time:  17:42:54.567032
+epoch:  80      style:  402.171         time:  17:43:03.133062
+epoch:  90      style:  398.62  time:  17:43:11.557871
+epoch:  100     style:  394.37  time:  17:43:19.990923
+epoch:  110     style:  388.119         time:  17:43:28.558849
+epoch:  120     style:  383.724         time:  17:43:37.074872
+epoch:  130     style:  376.682         time:  17:43:45.659823
+epoch:  140     style:  370.344         time:  17:43:54.198390
+epoch:  150     style:  366.787         time:  17:44:02.733357
+epoch:  160     style:  363.155         time:  17:44:11.230085
+epoch:  170     style:  360.462         time:  17:44:19.775459
+epoch:  180     style:  358.363         time:  17:44:28.385414
+epoch:  190     style:  356.924         time:  17:44:36.980322
+epoch:  200     style:  355.524         time:  17:44:45.636186
+epoch:  210     style:  354.526         time:  17:44:54.203015
+epoch:  220     style:  353.028         time:  17:45:03.046323
+epoch:  230     style:  351.968         time:  17:45:11.599656
+epoch:  240     style:  351.924         time:  17:45:20.108455
+epoch:  250     style:  350.82  time:  17:45:28.708130
+epoch:  260     style:  349.918         time:  17:45:37.264015
+epoch:  270     style:  348.871         time:  17:45:45.851121
+epoch:  280     style:  348.102         time:  17:45:54.627164
+epoch:  290     style:  347.617         time:  17:46:03.358748
+epoch:  300     style:  345.162         time:  17:46:11.956703
+epoch:  310     style:  357.177         time:  17:46:20.559325
+epoch:  320     style:  340.217         time:  17:46:29.140213
+epoch:  330     style:  333.605         time:  17:46:37.666794
+epoch:  340     style:  327.931         time:  17:46:46.507763
+epoch:  350     style:  324.568         time:  17:46:55.111334
+epoch:  360     style:  322.278         time:  17:47:03.554108
+epoch:  370     style:  320.187         time:  17:47:12.028173
+epoch:  380     style:  318.416         time:  17:47:20.449950
+epoch:  390     style:  310.096         time:  17:47:28.878759
+epoch:  400     style:  299.156         time:  17:47:37.298063
+epoch:  410     style:  294.573         time:  17:47:45.737765
+epoch:  420     style:  291.627         time:  17:47:54.264897
+epoch:  430     style:  289.526         time:  17:48:02.691403
+epoch:  440     style:  287.784         time:  17:48:11.204524
+epoch:  450     style:  286.194         time:  17:48:19.619648
+epoch:  460     style:  285.041         time:  17:48:28.062516
+epoch:  470     style:  284.187         time:  17:48:36.602929
+epoch:  480     style:  283.135         time:  17:48:45.032640
+epoch:  490     style:  282.192         time:  17:48:53.478617
+epoch:  500     style:  281.469         time:  17:49:02.018090
+epoch:  510     style:  280.795         time:  17:49:10.430349
+epoch:  520     style:  279.907         time:  17:49:18.807367
+epoch:  530     style:  279.243         time:  17:49:27.322793
+epoch:  540     style:  278.604         time:  17:49:35.831436
+epoch:  550     style:  277.861         time:  17:49:44.317181
+epoch:  560     style:  276.99  time:  17:49:52.985591
+epoch:  570     style:  276.245         time:  17:50:01.588729
+epoch:  580     style:  275.672         time:  17:50:09.985050
+epoch:  590     style:  275.161         time:  17:50:18.550528
+epoch:  600     style:  275.313         time:  17:50:27.058056
+epoch:  610     style:  274.428         time:  17:50:35.639199
+epoch:  620     style:  273.808         time:  17:50:44.136753
+epoch:  630     style:  275.947         time:  17:50:52.664327
+epoch:  640     style:  273.39  time:  17:51:01.176299
+epoch:  650     style:  272.917         time:  17:51:09.669443
+epoch:  660     style:  272.607         time:  17:51:18.155512
+epoch:  670     style:  272.101         time:  17:51:26.642090
+epoch:  680     style:  271.66  time:  17:51:35.108569
+epoch:  690     style:  272.212         time:  17:51:43.705825
+epoch:  700     style:  271.619         time:  17:51:52.158100
+epoch:  710     style:  271.126         time:  17:52:00.751809
+epoch:  720     style:  270.645         time:  17:52:09.601230
+epoch:  730     style:  270.357         time:  17:52:18.258940
+epoch:  740     style:  270.177         time:  17:52:26.940221
+epoch:  750     style:  269.926         time:  17:52:35.845957
+epoch:  760     style:  269.721         time:  17:52:44.368855
+epoch:  770     style:  269.528         time:  17:52:52.842609
+epoch:  780     style:  269.305         time:  17:53:01.443016
+epoch:  790     style:  269.193         time:  17:53:09.965628
+epoch:  800     style:  269.007         time:  17:53:18.655731
+epoch:  810     style:  269.062         time:  17:53:27.135111
+epoch:  820     style:  268.664         time:  17:53:35.649435
+epoch:  830     style:  268.566         time:  17:53:44.146148
+epoch:  840     style:  268.461         time:  17:53:52.570921
+epoch:  850     style:  268.408         time:  17:54:01.035652
+epoch:  860     style:  268.258         time:  17:54:09.774185
+epoch:  870     style:  268.202         time:  17:54:18.167080
+epoch:  880     style:  268.159         time:  17:54:26.612277
+epoch:  890     style:  268.054         time:  17:54:34.973475
+epoch:  900     style:  267.868         time:  17:54:43.366742
+epoch:  910     style:  267.874         time:  17:54:51.962892
+epoch:  920     style:  268.08  time:  17:55:00.419295
+epoch:  930     style:  267.964         time:  17:55:08.849523
+epoch:  940     style:  267.651         time:  17:55:17.226939
+epoch:  950     style:  267.533         time:  17:55:25.664123
+epoch:  960     style:  267.562         time:  17:55:34.148411
+epoch:  970     style:  267.35  time:  17:55:42.581145
+epoch:  980     style:  267.358         time:  17:55:51.002038
+epoch:  990     style:  267.369         time:  17:55:59.437563
+epoch:  1000    style:  267.338         time:  17:56:07.891908
+epoch:  1010    style:  267.433         time:  17:56:16.315353
+epoch:  1020    style:  267.082         time:  17:56:24.761940
+epoch:  1030    style:  267.005         time:  17:56:33.179349
+epoch:  1040    style:  266.942         time:  17:56:41.639806
+epoch:  1050    style:  266.89  time:  17:56:50.098529
+epoch:  1060    style:  267.245         time:  17:56:58.552608
+epoch:  1070    style:  266.789         time:  17:57:07.023769
+epoch:  1080    style:  266.944         time:  17:57:15.431419
+epoch:  1090    style:  266.937         time:  17:57:23.885167
+epoch:  1100    style:  266.71  time:  17:57:32.317368
+epoch:  1110    style:  266.489         time:  17:57:40.857925
+epoch:  1120    style:  266.726         time:  17:57:49.314446
+epoch:  1130    style:  266.754         time:  17:57:57.724848
+epoch:  1140    style:  266.386         time:  17:58:06.094536
+epoch:  1150    style:  266.41  time:  17:58:14.500443
+epoch:  1160    style:  266.235         time:  17:58:23.414312
+epoch:  1170    style:  266.238         time:  17:58:32.107390
+epoch:  1180    style:  266.174         time:  17:58:40.891068
+epoch:  1190    style:  266.549         time:  17:58:49.303497
+epoch:  1200    style:  266.169         time:  17:58:57.737395
+epoch:  1210    style:  266.125         time:  17:59:06.170805
+epoch:  1220    style:  266.111         time:  17:59:14.645569
+epoch:  1230    style:  266.278         time:  17:59:23.055470
+epoch:  1240    style:  265.987         time:  17:59:31.519038
+epoch:  1250    style:  265.85  time:  17:59:39.924426
+epoch:  1260    style:  266.039         time:  17:59:48.418047
+epoch:  1270    style:  265.813         time:  17:59:56.796871
+epoch:  1280    style:  265.983         time:  18:00:05.304372
+epoch:  1290    style:  265.882         time:  18:00:13.743757
+epoch:  1300    style:  265.753         time:  18:00:22.131830
+epoch:  1310    style:  265.83  time:  18:00:30.544747
+epoch:  1320    style:  265.79  time:  18:00:38.971166
+epoch:  1330    style:  265.791         time:  18:00:47.380297
+epoch:  1340    style:  265.701         time:  18:00:55.754720
+epoch:  1350    style:  265.563         time:  18:01:04.176728
+epoch:  1360    style:  265.732         time:  18:01:12.669451
+epoch:  1370    style:  265.983         time:  18:01:21.165408
+epoch:  1380    style:  265.549         time:  18:01:29.572743
+epoch:  1390    style:  265.479         time:  18:01:37.990331
+epoch:  1400    style:  265.512         time:  18:01:46.427411
+epoch:  1410    style:  265.662         time:  18:01:54.884812
+epoch:  1420    style:  265.589         time:  18:02:03.389254
+epoch:  1430    style:  265.398         time:  18:02:11.798011
+epoch:  1440    style:  265.558         time:  18:02:20.254389
+epoch:  1450    style:  265.474         time:  18:02:28.716232
+epoch:  1460    style:  265.422         time:  18:02:37.213331
+epoch:  1470    style:  265.191         time:  18:02:45.738053
+epoch:  1480    style:  265.313         time:  18:02:54.102499
+epoch:  1490    style:  265.777         time:  18:03:02.479592
+epoch:  1500    style:  265.124         time:  18:03:10.941528
+epoch:  1510    style:  265.194         time:  18:03:19.402827
+epoch:  1520    style:  265.158         time:  18:03:27.797789
+epoch:  1530    style:  265.218         time:  18:03:36.279107
+epoch:  1540    style:  265.037         time:  18:03:44.709594
+epoch:  1550    style:  265.062         time:  18:03:53.225234
+epoch:  1560    style:  265.501         time:  18:04:01.660968
+epoch:  1570    style:  265.0   time:  18:04:10.053581
+epoch:  1580    style:  264.992         time:  18:04:18.500034
+epoch:  1590    style:  264.759         time:  18:04:26.940463
+epoch:  1600    style:  264.752         time:  18:04:35.368726
+epoch:  1610    style:  264.89  time:  18:04:43.959732
+epoch:  1620    style:  265.081         time:  18:04:52.459676
+epoch:  1630    style:  264.96  time:  18:05:00.935318
+epoch:  1640    style:  264.637         time:  18:05:09.370788
+epoch:  1650    style:  265.18  time:  18:05:17.748992
+epoch:  1660    style:  265.148         time:  18:05:26.280052
+epoch:  1670    style:  264.587         time:  18:05:34.738621
+epoch:  1680    style:  264.634         time:  18:05:43.147867
+epoch:  1690    style:  264.83  time:  18:05:51.607487
+epoch:  1700    style:  264.659         time:  18:06:00.123433
+epoch:  1710    style:  264.492         time:  18:06:08.547704
+epoch:  1720    style:  264.394         time:  18:06:16.975902
+epoch:  1730    style:  264.742         time:  18:06:25.476437
+epoch:  1740    style:  264.53  time:  18:06:33.908803
+epoch:  1750    style:  264.366         time:  18:06:42.372573
+epoch:  1760    style:  264.349         time:  18:06:50.908566
+epoch:  1770    style:  264.836         time:  18:06:59.358985
+epoch:  1780    style:  264.318         time:  18:07:07.785163
+epoch:  1790    style:  264.384         time:  18:07:16.259140
+epoch:  1800    style:  264.318         time:  18:07:24.697671
+epoch:  1810    style:  264.319         time:  18:07:33.147660
+epoch:  1820    style:  264.131         time:  18:07:41.573532
+epoch:  1830    style:  264.249         time:  18:07:50.003216
+epoch:  1840    style:  264.196         time:  18:07:58.429459
+epoch:  1850    style:  264.31  time:  18:08:06.970147
+epoch:  1860    style:  264.425         time:  18:08:15.443281
+epoch:  1870    style:  264.156         time:  18:08:23.905347
+epoch:  1880    style:  264.349         time:  18:08:32.352495
+epoch:  1890    style:  264.759         time:  18:08:40.786168
+epoch:  1900    style:  264.289         time:  18:08:49.240295
+epoch:  1910    style:  264.193         time:  18:08:57.658893
+epoch:  1920    style:  264.164         time:  18:09:06.157542
+epoch:  1930    style:  264.061         time:  18:09:14.679639
+epoch:  1940    style:  264.351         time:  18:09:23.151959
+epoch:  1950    style:  264.161         time:  18:09:31.620350
+epoch:  1960    style:  263.979         time:  18:09:40.015270
+epoch:  1970    style:  264.011         time:  18:09:48.568642
+epoch:  1980    style:  263.939         time:  18:09:57.026443
+epoch:  1990    style:  264.09  time:  18:10:05.439445
+epoch:  0       style:  299.777         content:  2117.44       TV:  358968.0   total:  361386.0        time:  18:10:14.525462
+epoch:  10      style:  388.007         content:  1452.48       TV:  75439.8    total:  77280.3         time:  18:10:23.229391
+epoch:  20      style:  550.904         content:  1300.01       TV:  58524.4    total:  60375.4         time:  18:10:31.891141
+epoch:  30      style:  608.178         content:  1406.58       TV:  48192.1    total:  50206.8         time:  18:10:40.565399
+epoch:  40      style:  592.463         content:  1417.7        TV:  43645.9    total:  45656.1         time:  18:10:49.195231
+epoch:  50      style:  610.624         content:  1259.01       TV:  32219.6    total:  34089.3         time:  18:10:57.901558
+epoch:  60      style:  606.11  content:  1446.73       TV:  28116.1    total:  30169.0         time:  18:11:06.495094
+epoch:  70      style:  591.855         content:  1484.86       TV:  27572.0    total:  29648.7         time:  18:11:15.138583
+epoch:  80      style:  592.376         content:  1326.62       TV:  14143.2    total:  16062.2         time:  18:11:23.812600
+epoch:  90      style:  599.152         content:  1266.66       TV:  15464.0    total:  17329.8         time:  18:11:32.576529
+epoch:  100     style:  599.263         content:  1078.97       TV:  10976.6    total:  12654.8         time:  18:11:41.225066
+epoch:  110     style:  591.941         content:  1384.43       TV:  12596.6    total:  14573.0         time:  18:11:49.988994
+epoch:  120     style:  592.87  content:  1144.77       TV:  13271.5    total:  15009.2         time:  18:11:58.578422
+epoch:  130     style:  595.276         content:  1182.14       TV:  8661.28    total:  10438.7         time:  18:12:07.263339
+epoch:  140     style:  588.448         content:  1109.13       TV:  10206.6    total:  11904.2         time:  18:12:15.911002
+epoch:  150     style:  586.494         content:  983.112       TV:  7776.76    total:  9346.37         time:  18:12:24.549424
+epoch:  160     style:  608.398         content:  1092.93       TV:  6951.21    total:  8652.54         time:  18:12:33.168953
+epoch:  170     style:  620.859         content:  1120.15       TV:  6435.26    total:  8176.27         time:  18:12:41.787777
+epoch:  180     style:  631.769         content:  1158.83       TV:  1666.26    total:  3456.85         time:  18:12:50.404421
+epoch:  190     style:  634.476         content:  949.81        TV:  3925.73    total:  5510.01         time:  18:12:59.009503
+epoch:  200     style:  627.729         content:  1412.95       TV:  3138.61    total:  5179.29         time:  18:13:07.652704
+epoch:  210     style:  624.985         content:  1255.57       TV:  5702.9     total:  7583.45         time:  18:13:16.261309
+epoch:  220     style:  615.397         content:  1181.0        TV:  1712.01    total:  3508.41         time:  18:13:24.831118
+epoch:  230     style:  611.409         content:  1300.95       TV:  1798.58    total:  3710.94         time:  18:13:33.482966
+epoch:  240     style:  608.513         content:  1228.11       TV:  2018.52    total:  3855.14         time:  18:13:42.186858
+epoch:  250     style:  607.247         content:  1301.73       TV:  4685.89    total:  6594.87         time:  18:13:50.781471
+epoch:  260     style:  605.27  content:  1044.59       TV:  2120.73    total:  3770.59         time:  18:13:59.519799
+epoch:  270     style:  604.469         content:  1491.56       TV:  2320.52    total:  4416.56         time:  18:14:08.278804
+epoch:  280     style:  604.1   content:  1125.16       TV:  1900.74    total:  3630.0  time:  18:14:16.864548
+epoch:  290     style:  603.547         content:  1602.16       TV:  3795.44    total:  6001.15         time:  18:14:25.525593
+epoch:  300     style:  603.955         content:  1180.12       TV:  2025.96    total:  3810.04         time:  18:14:34.154607
+epoch:  310     style:  604.373         content:  1087.18       TV:  1428.08    total:  3119.63         time:  18:14:42.764341
+epoch:  320     style:  604.605         content:  1110.78       TV:  1360.68    total:  3076.06         time:  18:14:51.457642
+epoch:  330     style:  605.094         content:  1160.53       TV:  862.622    total:  2628.24         time:  18:15:00.181716
+epoch:  340     style:  605.183         content:  1248.76       TV:  1475.54    total:  3329.49         time:  18:15:08.855142
+epoch:  350     style:  604.919         content:  1035.07       TV:  2789.13    total:  4429.11         time:  18:15:17.531291
+epoch:  360     style:  605.904         content:  1540.95       TV:  1450.97    total:  3597.82         time:  18:15:26.197402
+epoch:  370     style:  605.848         content:  892.044       TV:  2508.82    total:  4006.71         time:  18:15:34.809670
+epoch:  380     style:  606.842         content:  1490.67       TV:  1543.07    total:  3640.58         time:  18:15:43.449903
+epoch:  390     style:  606.059         content:  1284.96       TV:  3092.41    total:  4983.42         time:  18:15:52.157962
+epoch:  400     style:  606.554         content:  1108.83       TV:  3163.08    total:  4878.47         time:  18:16:00.799920
+epoch:  410     style:  608.291         content:  1159.95       TV:  1111.99    total:  2880.23         time:  18:16:09.430038
+epoch:  420     style:  608.358         content:  973.451       TV:  1557.65    total:  3139.46         time:  18:16:18.133062
+epoch:  430     style:  608.917         content:  1362.4        TV:  1397.5     total:  3368.81         time:  18:16:26.769106
+epoch:  440     style:  609.153         content:  1162.7        TV:  1136.11    total:  2907.97         time:  18:16:35.377803
+epoch:  450     style:  609.505         content:  1195.44       TV:  1180.38    total:  2985.32         time:  18:16:44.035806
+epoch:  460     style:  609.296         content:  1233.31       TV:  1639.12    total:  3481.73         time:  18:16:52.667601
+epoch:  470     style:  609.962         content:  1013.25       TV:  987.856    total:  2611.07         time:  18:17:01.320283
+epoch:  480     style:  610.096         content:  1251.01       TV:  1207.59    total:  3068.7  time:  18:17:10.006159
+epoch:  490     style:  610.066         content:  1041.19       TV:  1695.87    total:  3347.13         time:  18:17:18.656008
+epoch:  500     style:  610.144         content:  1139.47       TV:  2015.8     total:  3765.41         time:  18:17:27.287585
+epoch:  510     style:  611.019         content:  1223.65       TV:  844.52     total:  2679.19         time:  18:17:35.926604
+epoch:  520     style:  610.635         content:  1208.97       TV:  1580.21    total:  3399.82         time:  18:17:44.598017
+epoch:  530     style:  611.541         content:  989.559       TV:  727.284    total:  2328.38         time:  18:17:53.228427
+epoch:  540     style:  610.849         content:  1314.7        TV:  1615.72    total:  3541.27         time:  18:18:01.957530
+epoch:  550     style:  611.801         content:  1022.75       TV:  725.759    total:  2360.31         time:  18:18:10.755890
+epoch:  560     style:  611.733         content:  1298.0        TV:  1245.37    total:  3155.1  time:  18:18:19.692845
+epoch:  570     style:  612.277         content:  946.289       TV:  709.981    total:  2268.55         time:  18:18:28.365595
+epoch:  580     style:  611.977         content:  1063.89       TV:  1142.21    total:  2818.08         time:  18:18:37.078033
+epoch:  590     style:  612.239         content:  1246.71       TV:  821.805    total:  2680.75         time:  18:18:45.732860
+epoch:  600     style:  612.775         content:  1126.05       TV:  576.467    total:  2315.29         time:  18:18:54.581527
+epoch:  610     style:  612.249         content:  1412.24       TV:  929.515    total:  2954.01         time:  18:19:03.229322
+epoch:  620     style:  612.584         content:  1217.75       TV:  938.321    total:  2768.65         time:  18:19:11.993404
+epoch:  630     style:  613.305         content:  1031.25       TV:  539.585    total:  2184.14         time:  18:19:20.701553
+epoch:  640     style:  612.871         content:  1346.95       TV:  1018.51    total:  2978.33         time:  18:19:29.383415
+epoch:  650     style:  613.042         content:  1130.44       TV:  628.396    total:  2371.88         time:  18:19:38.068387
+epoch:  660     style:  612.953         content:  1251.97       TV:  639.833    total:  2504.75         time:  18:19:46.706156
+epoch:  670     style:  613.356         content:  1254.44       TV:  620.816    total:  2488.61         time:  18:19:55.346488
+epoch:  680     style:  613.085         content:  1259.21       TV:  1147.28    total:  3019.57         time:  18:20:04.093858
+epoch:  690     style:  613.492         content:  1136.03       TV:  550.516    total:  2300.04         time:  18:20:12.719233
+epoch:  700     style:  613.183         content:  1070.73       TV:  996.799    total:  2680.71         time:  18:20:21.480927
+epoch:  710     style:  613.431         content:  1115.57       TV:  1032.46    total:  2761.46         time:  18:20:30.279538
+epoch:  720     style:  613.815         content:  1082.46       TV:  836.612    total:  2532.88         time:  18:20:38.909845
+epoch:  730     style:  613.733         content:  1154.94       TV:  759.671    total:  2528.34         time:  18:20:47.579073
+epoch:  740     style:  614.255         content:  1572.58       TV:  635.148    total:  2821.98         time:  18:20:56.222610
+epoch:  750     style:  614.358         content:  1216.03       TV:  706.064    total:  2536.46         time:  18:21:04.870582
+epoch:  760     style:  615.036         content:  1083.93       TV:  484.222    total:  2183.19         time:  18:21:13.565570
+epoch:  770     style:  614.485         content:  1102.53       TV:  1167.98    total:  2884.99         time:  18:21:22.251589
+epoch:  780     style:  615.138         content:  989.737       TV:  1096.43    total:  2701.3  time:  18:21:31.056102
+epoch:  790     style:  617.332         content:  1153.77       TV:  673.848    total:  2444.95         time:  18:21:39.664784
+epoch:  800     style:  616.504         content:  1134.4        TV:  523.064    total:  2273.97         time:  18:21:48.375052
+epoch:  810     style:  615.828         content:  1308.98       TV:  856.369    total:  2781.18         time:  18:21:57.001478
+epoch:  820     style:  614.013         content:  1303.75       TV:  2420.55    total:  4338.31         time:  18:22:05.628554
+epoch:  830     style:  616.083         content:  1056.36       TV:  603.54     total:  2275.98         time:  18:22:14.312656
+epoch:  840     style:  616.317         content:  1195.66       TV:  556.953    total:  2368.93         time:  18:22:22.954608
+epoch:  850     style:  615.93  content:  1126.02       TV:  462.537    total:  2204.49         time:  18:22:31.589820
+epoch:  860     style:  615.829         content:  1020.1        TV:  567.207    total:  2203.13         time:  18:22:40.258714
+epoch:  870     style:  615.623         content:  1202.91       TV:  699.845    total:  2518.38         time:  18:22:49.004994
+epoch:  880     style:  616.314         content:  1026.88       TV:  438.276    total:  2081.47         time:  18:22:57.654244
+epoch:  890     style:  615.724         content:  1266.69       TV:  607.332    total:  2489.74         time:  18:23:06.322038
+epoch:  900     style:  616.053         content:  936.809       TV:  442.434    total:  1995.3  time:  18:23:14.966616
+epoch:  910     style:  615.866         content:  1276.69       TV:  477.39     total:  2369.94         time:  18:23:23.586100
+epoch:  920     style:  614.869         content:  1037.12       TV:  946.307    total:  2598.29         time:  18:23:32.218671
+epoch:  930     style:  616.199         content:  1059.49       TV:  484.125    total:  2159.81         time:  18:23:40.920618
+epoch:  940     style:  615.872         content:  1322.13       TV:  464.73     total:  2402.73         time:  18:23:49.602245
+epoch:  950     style:  615.756         content:  1088.48       TV:  475.761    total:  2179.99         time:  18:23:58.277869
+epoch:  960     style:  615.136         content:  1440.05       TV:  943.981    total:  2999.17         time:  18:24:07.355763
+epoch:  970     style:  615.444         content:  1206.2        TV:  586.854    total:  2408.5  time:  18:24:15.995364
+epoch:  980     style:  615.188         content:  1136.15       TV:  859.711    total:  2611.05         time:  18:24:24.741198
+epoch:  990     style:  615.478         content:  1134.47       TV:  498.669    total:  2248.62         time:  18:24:33.481214
+epoch:  1000    style:  615.201         content:  1483.11       TV:  673.241    total:  2771.55         time:  18:24:42.190309
+epoch:  1010    style:  614.764         content:  1011.68       TV:  823.591    total:  2450.03         time:  18:24:50.829610
+epoch:  1020    style:  615.41  content:  996.926       TV:  518.764    total:  2131.1  time:  18:24:59.439851
+epoch:  1030    style:  614.538         content:  1218.63       TV:  1132.09    total:  2965.26         time:  18:25:08.197446
+epoch:  1040    style:  614.148         content:  1177.61       TV:  857.141    total:  2648.9  time:  18:25:16.842997
+epoch:  1050    style:  614.566         content:  1379.34       TV:  603.984    total:  2597.89         time:  18:25:25.534553
+epoch:  1060    style:  614.725         content:  936.901       TV:  481.388    total:  2033.01         time:  18:25:34.113598
+epoch:  1070    style:  614.651         content:  1327.76       TV:  581.492    total:  2523.9  time:  18:25:42.813826
+epoch:  1080    style:  614.43  content:  1273.77       TV:  590.305    total:  2478.5  time:  18:25:51.552012
+epoch:  1090    style:  614.179         content:  1173.69       TV:  455.603    total:  2243.47         time:  18:26:00.270018
+epoch:  1100    style:  614.519         content:  1361.7        TV:  653.739    total:  2629.96         time:  18:26:08.879253
+epoch:  1110    style:  614.477         content:  958.478       TV:  458.114    total:  2031.07         time:  18:26:17.543504
+epoch:  1120    style:  614.011         content:  1351.42       TV:  746.742    total:  2712.17         time:  18:26:26.263380
+epoch:  1130    style:  614.143         content:  1067.59       TV:  567.438    total:  2249.17         time:  18:26:35.012265
+epoch:  1140    style:  614.14  content:  1250.82       TV:  566.05     total:  2431.01         time:  18:26:43.647476
+epoch:  1150    style:  614.373         content:  1028.13       TV:  530.546    total:  2173.05         time:  18:26:52.292879
+epoch:  1160    style:  613.863         content:  1204.97       TV:  698.979    total:  2517.82         time:  18:27:00.990828
+epoch:  1170    style:  614.632         content:  898.399       TV:  464.026    total:  1977.06         time:  18:27:09.651947
+epoch:  1180    style:  614.35  content:  1108.41       TV:  540.996    total:  2263.76         time:  18:27:18.319376
+epoch:  1190    style:  613.366         content:  1273.72       TV:  768.294    total:  2655.38         time:  18:27:26.975619
+epoch:  1200    style:  613.471         content:  1194.55       TV:  799.836    total:  2607.86         time:  18:27:35.563197
+epoch:  1210    style:  614.662         content:  1045.62       TV:  532.133    total:  2192.42         time:  18:27:44.201774
+epoch:  1220    style:  614.666         content:  1256.54       TV:  530.952    total:  2402.16         time:  18:27:52.868172
+epoch:  1230    style:  614.683         content:  1389.63       TV:  448.99     total:  2453.3  time:  18:28:01.494874
+epoch:  1240    style:  614.757         content:  904.496       TV:  413.063    total:  1932.32         time:  18:28:10.109343
+epoch:  1250    style:  614.484         content:  1141.0        TV:  466.877    total:  2222.36         time:  18:28:18.731310
+epoch:  1260    style:  613.887         content:  1284.22       TV:  845.885    total:  2743.99         time:  18:28:27.405949
+epoch:  1270    style:  614.497         content:  1066.87       TV:  560.812    total:  2242.18         time:  18:28:36.072078
+epoch:  1280    style:  614.67  content:  1019.07       TV:  457.484    total:  2091.23         time:  18:28:44.706752
+epoch:  1290    style:  614.586         content:  1131.15       TV:  437.176    total:  2182.91         time:  18:28:53.387980
+epoch:  1300    style:  614.263         content:  973.713       TV:  504.909    total:  2092.88         time:  18:29:02.082497
+epoch:  1310    style:  613.67  content:  1038.67       TV:  567.279    total:  2219.62         time:  18:29:10.713528
+epoch:  1320    style:  614.568         content:  1328.15       TV:  554.658    total:  2497.37         time:  18:29:19.376770
+epoch:  1330    style:  614.25  content:  1286.13       TV:  579.55     total:  2479.93         time:  18:29:28.045467
+epoch:  1340    style:  614.275         content:  982.584       TV:  454.603    total:  2051.46         time:  18:29:36.776623
+epoch:  1350    style:  614.356         content:  1246.93       TV:  490.233    total:  2351.51         time:  18:29:45.482624
+epoch:  1360    style:  614.043         content:  1229.39       TV:  490.705    total:  2334.13         time:  18:29:54.119753
+epoch:  1370    style:  613.41  content:  1159.76       TV:  715.998    total:  2489.16         time:  18:30:02.762458
+epoch:  1380    style:  613.662         content:  1148.93       TV:  580.009    total:  2342.6  time:  18:30:11.361545
+epoch:  1390    style:  613.986         content:  994.395       TV:  468.738    total:  2077.12         time:  18:30:19.943471
+epoch:  1400    style:  613.084         content:  1277.25       TV:  770.409    total:  2660.75         time:  18:30:28.591182
+epoch:  1410    style:  613.813         content:  945.58        TV:  471.938    total:  2031.33         time:  18:30:37.245039
+epoch:  1420    style:  613.965         content:  1063.78       TV:  578.651    total:  2256.39         time:  18:30:45.921061
+epoch:  1430    style:  614.274         content:  1108.15       TV:  588.634    total:  2311.06         time:  18:30:54.619548
+epoch:  1440    style:  613.959         content:  1278.08       TV:  600.522    total:  2492.56         time:  18:31:03.414868
+epoch:  1450    style:  613.274         content:  1127.27       TV:  568.317    total:  2308.86         time:  18:31:12.057845
+epoch:  1460    style:  612.901         content:  1194.41       TV:  1150.14    total:  2957.45         time:  18:31:20.707062
+epoch:  1470    style:  612.991         content:  1430.15       TV:  694.648    total:  2737.79         time:  18:31:29.380228
+epoch:  1480    style:  613.371         content:  1020.51       TV:  470.663    total:  2104.55         time:  18:31:38.052480
+epoch:  1490    style:  613.884         content:  1050.06       TV:  480.534    total:  2144.48         time:  18:31:46.779887
+epoch:  1500    style:  612.62  content:  1079.2        TV:  780.809    total:  2472.63         time:  18:31:55.657793
+epoch:  1510    style:  613.911         content:  1024.15       TV:  475.468    total:  2113.52         time:  18:32:04.453850
+epoch:  1520    style:  613.435         content:  1165.2        TV:  498.573    total:  2277.21         time:  18:32:13.082453
+epoch:  1530    style:  613.318         content:  1314.46       TV:  473.686    total:  2401.47         time:  18:32:21.772928
+epoch:  1540    style:  613.917         content:  1245.14       TV:  465.872    total:  2324.93         time:  18:32:30.491599
+epoch:  1550    style:  613.579         content:  1089.07       TV:  466.321    total:  2168.97         time:  18:32:39.098524
+epoch:  1560    style:  612.669         content:  1553.7        TV:  1231.25    total:  3397.62         time:  18:32:47.744973
+epoch:  1570    style:  612.403         content:  1214.35       TV:  646.249    total:  2473.0  time:  18:32:56.405131
+epoch:  1580    style:  613.352         content:  1204.31       TV:  486.244    total:  2303.91         time:  18:33:05.053480
+epoch:  1590    style:  613.984         content:  1168.14       TV:  488.285    total:  2270.41         time:  18:33:13.704038
+epoch:  1600    style:  612.967         content:  1131.06       TV:  761.775    total:  2505.8  time:  18:33:22.334909
+epoch:  1610    style:  612.164         content:  1311.2        TV:  1130.27    total:  3053.63         time:  18:33:31.071099
+epoch:  1620    style:  612.572         content:  1289.55       TV:  943.965    total:  2846.09         time:  18:33:39.690938
+epoch:  1630    style:  613.115         content:  1320.7        TV:  764.418    total:  2698.23         time:  18:33:48.348238
+epoch:  1640    style:  613.637         content:  939.502       TV:  472.81     total:  2025.95         time:  18:33:57.081028
+epoch:  1650    style:  613.293         content:  1188.81       TV:  507.046    total:  2309.15         time:  18:34:05.763338
+epoch:  1660    style:  612.628         content:  1106.9        TV:  608.158    total:  2327.68         time:  18:34:14.509632
+epoch:  1670    style:  612.984         content:  1057.86       TV:  514.325    total:  2185.16         time:  18:34:23.313300
+epoch:  1680    style:  611.497         content:  1178.58       TV:  820.572    total:  2610.65         time:  18:34:31.988402
+epoch:  1690    style:  611.79  content:  1191.36       TV:  504.521    total:  2307.68         time:  18:34:40.652560
+epoch:  1700    style:  612.437         content:  1252.89       TV:  478.923    total:  2344.25         time:  18:34:49.264032
+epoch:  1710    style:  611.613         content:  1039.6        TV:  465.511    total:  2116.73         time:  18:34:58.002047
+epoch:  1720    style:  613.006         content:  988.01        TV:  459.984    total:  2061.0  time:  18:35:06.682627
+epoch:  1730    style:  611.758         content:  980.867       TV:  476.11     total:  2068.74         time:  18:35:15.271413
+epoch:  1740    style:  611.907         content:  1098.57       TV:  501.017    total:  2211.49         time:  18:35:24.035201
+epoch:  1750    style:  611.531         content:  1110.32       TV:  523.771    total:  2245.62         time:  18:35:32.664382
+epoch:  1760    style:  611.48  content:  1437.04       TV:  633.899    total:  2682.42         time:  18:35:41.409254
+epoch:  1770    style:  612.3   content:  1084.84       TV:  530.988    total:  2228.13         time:  18:35:50.023426
+epoch:  1780    style:  611.974         content:  951.346       TV:  470.053    total:  2033.37         time:  18:35:58.834701
+epoch:  1790    style:  612.123         content:  1184.65       TV:  542.469    total:  2339.24         time:  18:36:07.550388
+epoch:  1800    style:  611.785         content:  1317.62       TV:  481.01     total:  2410.41         time:  18:36:16.195138
+epoch:  1810    style:  611.441         content:  1211.81       TV:  494.838    total:  2318.09         time:  18:36:24.888559
+epoch:  1820    style:  611.795         content:  937.299       TV:  512.556    total:  2061.65         time:  18:36:33.583457
+epoch:  1830    style:  612.476         content:  1107.29       TV:  428.386    total:  2148.15         time:  18:36:42.250069
+epoch:  1840    style:  611.942         content:  1300.6        TV:  483.038    total:  2395.58         time:  18:36:50.917176
+epoch:  1850    style:  611.764         content:  925.189       TV:  461.225    total:  1998.18         time:  18:36:59.654375
+epoch:  1860    style:  611.534         content:  918.279       TV:  403.994    total:  1933.81         time:  18:37:08.390519
+epoch:  1870    style:  611.138         content:  1268.63       TV:  711.536    total:  2591.31         time:  18:37:17.012707
+epoch:  1880    style:  611.196         content:  1179.09       TV:  681.693    total:  2471.97         time:  18:37:25.602867
+epoch:  1890    style:  611.137         content:  1040.23       TV:  452.692    total:  2104.06         time:  18:37:34.422581
+epoch:  1900    style:  611.491         content:  1000.28       TV:  413.688    total:  2025.46         time:  18:37:43.073600
+epoch:  1910    style:  611.347         content:  1234.7        TV:  553.896    total:  2399.94         time:  18:37:51.739875
+epoch:  1920    style:  611.372         content:  1179.48       TV:  518.045    total:  2308.9  time:  18:38:00.491364
+epoch:  1930    style:  609.825         content:  1349.56       TV:  789.483    total:  2748.86         time:  18:38:09.111460
+epoch:  1940    style:  611.696         content:  1205.52       TV:  579.501    total:  2396.72         time:  18:38:17.725131
+epoch:  1950    style:  612.331         content:  1074.21       TV:  441.383    total:  2127.92         time:  18:38:26.395268
+epoch:  1960    style:  610.434         content:  1388.47       TV:  554.915    total:  2553.82         time:  18:38:35.126849
+epoch:  1970    style:  611.385         content:  1176.57       TV:  537.687    total:  2325.64         time:  18:38:43.722427
+epoch:  1980    style:  610.811         content:  1145.76       TV:  496.95     total:  2253.52         time:  18:38:52.478025
+epoch:  1990    style:  611.044         content:  1067.9        TV:  511.217    total:  2190.16         time:  18:39:01.282280
